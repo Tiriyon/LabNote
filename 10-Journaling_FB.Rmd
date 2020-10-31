@@ -1,0 +1,27 @@
+-----
+20June2020
+-----
+
+Today's read:
+
+[Direct Visualization of Live Zebrafish Glycan via Single-step Metabolic Labeling with Fluorophore-tagged Nucleotide Sugars] (../../365/20June2020/file)
+
+**Reason for reading:** Sialic Acid probing
+
+**My findings:** Couldn't find the corresponding molecule online. I have searched the [supporting information]() and didn't find much help besides the fact I can't synthesize it myself.
+Furthermore, the molecule is sialic acid derivative and not ManNAc, which I also couldn't find.
+
+**Next option:** Research older outposts.
+
+**And some more reading:** a) proove frankenbodies feasibility. b) FLAGtag research. c) Writing prop layout. d) Get HD seq.
+
+Got [this](https://scholar.google.co.il/scholar?q=mannac+zebrafish+fluorescence&hl=en&as_sdt=0&as_vis=1&oi=scholart#d=gs_qabs&u=%23p%3DOLWGKqq5l7MJ) and [this](https://link.springer.com/article/10.1007/BF01954221) for marking sialic acid. Also **lectins** got interesting.
+
+Read [nu7441]() related article for Tommorow's injections. 
+
+### etc procedures:
+
+• DNA extract from yesterday were put in - 20 deg.
+
+\newpage
+

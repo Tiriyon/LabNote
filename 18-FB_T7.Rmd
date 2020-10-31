@@ -1,0 +1,88 @@
+# FBgfp After T7 splicing, gel analysis
+
+37°C for all reactions.
+
+| Component    | Concentration | Volume µl |
+|--------------+---------------+-----------|
+| HpaI         | 2.5 Units     | 0.5       |
+| CutSmart     | 1X            | 5         |
+| Plasmid (1s) | 0.5 ng        | 7         |
+| DDW          |               | 37.5      |
+| Total        |               | 50        |
+
+| Component    | Concentration | Volume µl |
+|--------------+---------------+-----------|
+| HiCII        | 2.5 Units     | 0.5       |
+| NebBuffer 3  | 1X            | 5         |
+| Plasmid (1s) | 0.5 ng        | 7         |
+| DDW          |               | 37.5      |
+| Total        |               | 50        |
+
+
+| Component    | Concentration | Volume µl |
+|--------------+---------------+-----------|
+| AflII        | 2.5 Units     | 0.5       |
+| NebBuffer 3  | 1X            | 5         |
+| Plasmid (2s) | 0.5 ng        | 3         |
+| DDW          |               | 41.5      |
+| Total        |               | 50        |
+
+| Component     | Concentration | Volume µl |
+|---------------+---------------+-----------|
+| XhoI          | 2.5 Units     | 1         |
+| FD buffer 10X | 1X            | 3         |
+| Plasmid (2s)  | 0.5 ng        | 3         |
+| DDW           |               | 14        |
+| Total         |               | 20        |
+
+Strip:
+
+| 1        | 2          | 3                                 | 4        | 5 | 6 | 7 | 8 |
+|----------+------------+-----------------------------------+----------+---+---+---+---|
+| H = HpaI | C = HincII | A = AlfII = that wasn't it ALFIII | X = XhoI |   |   |   |   |
+
+-----
+8Sep2020
+-----
+
+The above strip is going through SpinVac for 1 h at 60°C after-which I will resuspend the digestion products in 10 µL.
+
+Additionally I am making a 5th reaction (call it 4th if you dissregard the failed AflIII reaction , AflII is needed instead) for FBgfp with no T7, I should start adding the T7 in the naming, So FBgfpCMV plasmid with XhoI to see if the enzyme actually cut. 
+
+
+| Component                   | Concentration | Volume µl |
+|-----------------------------+---------------+-----------|
+| XhoI                        | 2.5 Units     | 1         |
+| FD buffer 10X               | 1X            | 3         |
+| Plasmid (FBgfpCMV tube 003) | 0.5 ng        | 3         |
+| DDW                         |               | 14        |
+| Total                       |               | 20        |
+
+Internet resources:
+
+[Thermo Fast Digest](https://www.thermofisher.com/il/en/home/brands/thermo-scientific/molecular-biology/thermo-scientific-restriction-modifying-enzymes/restriction-enzymes-thermo-scientific/fastdigest-thermo-scientific.html?gclid=CjwKCAjw19z6BRAYEiwAmo64Le8CIKtKzsEUip_d3Pu2Vkah5nRzoJq9N6x3SxypvnXtM-IA2l1j0hoCykMQAvD_BwE&ef_id=CjwKCAjw19z6BRAYEiwAmo64Le8CIKtKzsEUip_d3Pu2Vkah5nRzoJq9N6x3SxypvnXtM-IA2l1j0hoCykMQAvD_BwE:G:s&s_kwcid=AL!3652!3!401309199352!p!!g!!fastdigest&cid=bid_mol_eps_r01_co_cp1358_pjt0000_bid00000_0se_gaw_bt_pur_con)
+[NEB cloner](https://nebcloner.neb.com/)
+
+**Gel:**
+
+| 1      | 2        | 3          | 4 | 5  | 6                                   | 7      | 8 |
+|--------+----------+------------+---+----+-------------------------------------+--------+---|
+| M 1kbp | H = HpaI | C = HincII | X | X0 | 3 µl FBgfpCMV uncut + 1.5 µL buffer | M 1kbp |   |
+
+80V 45 min 0.8%
+
+# Danger danger - High Voltage - The experiment F A I L E D
+
+[Local gel image](../images/08Sep2020_T7Analysis.png)
+
+![Gel](https://i.imgur.com/9GoNOfW.jpg?1)
+
+-----
+09Sep2020
+-----
+
+# New Digestions: 
+
+
+I figured out that the T7 insert deletes the HindIII RE site on the FBgfp (and other FB plasmids). I can use that to perform the negative digestion assay.
+

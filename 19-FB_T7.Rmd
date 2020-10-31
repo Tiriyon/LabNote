@@ -1,0 +1,164 @@
+# FBgfp After T7 splicing, gel analysis
+
+37°C for all reactions.
+
+Digest with XhoI again, gel run w/o speedVac!
+
+| Component     | Concentration | Volume µl |
+|---------------+---------------+-----------|
+| XhoI          | 2.5 Units     | 1         |
+| FD buffer 10X | 1X            | 3         |
+| Plasmid (2s)  | 0.5 ng        | 2         |
+| DDW           |               | 14        |
+| Total         |               | 20        |
+
+Strip:
+
+| Desc     | 1        | 2        | 3        | 4        | 5        | 6        | 7 | 8 |
+|----------+----------+----------+----------+----------+----------+----------+---+---|
+| Lable    | 1T7      | 2T7      | 6CMV     | 6N       | 2N       | 1N       |   |   |
+| Source   | 020      | 022      | 006      | 006      | 022      | 020      |   |   |
+| Promoter | T7       | T7       | CMV      | CMV      | T7       | T7       |   |   |
+| Buffer   | FD green | FD green | FD green | FD green | FD green | FD green |   |   |
+| RE       | XhoI     | XhoI     | XhoI     | DDW      | DDW      | DDW      |   |   |
+
+
+Gel Legend:
+
+| 1      | 2   | 3    | 4  | 5  | 6  | 7            | 8 |
+|--------+-----+------+----+----+----+--------------+---|
+| 1kbp M | 2T7 | 6CMV | 6N | 2N | 1N | 1kbp M1kbp M |   |
+
+
+-----
+13Sep2020
+-----
+
+
+# T4 and RE QA:
+
+DNA used is 100 bp ladder which has blunt ends
+
+Control:
+
+Invitrogen buffer 2 µl + ladder 2.5 µl + 5.5 µl DDW (Tot. 10 µl)
+
+Neb buffer 1 µl + ladder 2.5 µl + 6.5 µl DDW
+
+Promega buffer 2.5 µl + 2.5 µl ladder + 5 µl DDW
+
+Nebuffer 2 2.5 µl + 5.5 µl plasmid 004 + 2 µl DDW
+
+NEBuffer3 2.5 µl + 5.5 µl plasmid 004 + 2 µl DDW
+
+**Invitrogen T4:**  [A]
+
+| Component | Volume | Conc    |
+|-----------+--------+---------|
+| DDW       | 10 µl |         |
+| 5X buffer | 4 µL   | 1X      |
+| DNA       | 1 µ  | 500 ng  |
+| T4        | 5µL    | 5 units |
+| Temp      | RT     |         |
+| Time      | 1 h    |         |
+
+
+**NEB:** [B-C-D]
+
+| Component  | Volume | Conc    |
+|------------+--------+---------|
+| DDW        | 10 µl  |         |
+| 10X buffer | 2 µL   | 1X      |
+| DNA        | 1 µl   | 500 ng  |
+| T4         | 1µL    | 1 units |
+| Temp       | 65°C   |         |
+| Time       | 1h     |         |
+
+**Promega** [E]
+
+| Reagent                                 | Positive Control |
+|-----------------------------------------+------------------|
+| 2X rapid ligation buffer, T4 DNA ligase | 5 µl             |
+| pGEN T Easy Vector (50ng)               | 1 µl             |
+| Control insert DNA                      | 2 µl             |
+| T4 DNA ligase 93 U/µl)                  | 1 µl             |
+| DDW                                     | 1 µl             |
+| Temperature                             | RT               |
+
+**Enzymes:**
+
+DNA used is tube 003 199.497 ng/µl of FBgfp colony no. 1
+
+**HindIII**  [A] 4
+
+| Component        | Volume  | Conc     |
+|------------------+---------+----------|
+| DDW              | 41.5 µl |          |
+| DNA              | 2.5 µl  | 500 ng   |
+| 10x NEBuffer 2.1 | 5 µl    | 1X       |
+| HindIII          | 1 µl    | 20 units |
+| Temp             | 37°C    |          |
+| Time             | 1h      |          |
+
+**BglII** [B-C] 5  8 
+
+| Component        | Volume   | Conc     |
+|------------------+----------+----------|
+| DDW              | 41.5 µl  |          |
+| DNA              | 2.5 µl   | 500 ng   |
+| 10x NEBuffer 3.1 | 5 µl     | 1X       |
+| BglII            | 1 µl     | 10 units |
+| Temp             | 37°C     |          |
+| Time             | 5-15 min |          |
+
+**HindIII & BglII** [D] 6
+
+| Component        | Volume | Conc     |
+|------------------+--------+----------|
+| DDW              | to 50  |          |
+| DNA              | 2.5 µl | 500 ng   |
+| 10x NEBuffer 3.1 | 5 µl   | 1X       |
+| BglII            | 1 µl   | 10 units |
+| HindIII          | 1µl    | 20 units |
+| Temp             | 37°C   |          |
+| Time             | 1 h    |          |
+
+**BglII & BamHI** [E] 7 
+
+| Component        | Volume  | Conc     |
+|------------------+---------+----------|
+| DDW              | 40.5 µl |          |
+| DNA              | 2.5 µl  | 500 ng   |
+| 10x NEBuffer 3.1 | 5 µl    | 1X       |
+| BglII            | 1 µl    | 10 units |
+| BamHI            | 1µl     | 20 units |
+| Temp             | 37°C    |          |
+| Time             | 1 h     |          |
+
+## Gel 0.8%, 120V, 35 min:
+
+| 1    | 2  | 3   | 4  | 5   | 6   | 7   | 8   | 9   | 10 | 11  | 12 | 13  | 14 | 15 |
+|------+----+-----+----+-----+-----+-----+-----+-----+----+-----+----+-----+----+----|
+| 1K   | N  | N   | N  | [N] | Pro | [P] | INV | [I] | H  | [2] | 1K | H+B | B  | 1k |
+| 16   | 17 | 18  | 19 | 20  | 21  | 22  | 23  | 24  | 25 | 26  | 27 | 28  | 29 | 30 |
+| B+Ba | B  | [3] | 1k |     |     |     |     |     |    |     |    |     |    |    |
+
+
+| # | 1    | 2     | 3     | 4 | 5 | 6   | 7    | 8   |
+|---+------+-------+-------+---+---+-----+------+-----|
+| A | 4/15 | 11/13 | 12/10 |   |   |     |      |     |
+| B | Pro  |       |       |   |   |     |      | Inv |
+| C |      |       |       | 2 | 3 | I   | N    | P   |
+| D |      |       |       | H | B | B+H | B+Ba | B   |
+
+| # | 1           | 2            | 3            | 4          | 5            | 6                    | 7                  | 8                 |
+|---+-------------+--------------+--------------+------------+--------------+----------------------+--------------------+-------------------|
+| A | NEB T4 4/15 | NEB T4 11/13 | NEB T4 12/10 |            |              |                      |                    |                   |
+| B | Promega T4  |              |              |            |              |                      |                    | Invitrogen T4     |
+| C |             |              |              | NEBuffer 2 | NEBuffer3    | Invitrogen T4 buffer | Neb T4 bffer       | Promega T4 buffer |
+| D |             |              |              | HindIII    | BglII (2/13) | BglII (2/13)+HindIII | BglII (2/13)+BamHI | BglII (3/98)      |
+
+
+![Gel image](https://i.imgur.com/uUxTWbu.jpg)
+
+[See local](images/13sep2020.png)

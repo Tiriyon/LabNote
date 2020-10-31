@@ -1,0 +1,213 @@
+# Introduction
+
+[Back to main menu](zfMain.html)
+
+Give intro to experiment notebook
+
+----
+18Aug2020
+----
+
+
+
+# T7 Splicing: FBgfp CMV T7 insertion
+
+**Goal:** Insert T7 promotor inside the CMV promotor so that I can T7 IVT the plasmid into mRNA for microinjections.
+
+**The design is as follows:**
+
+![Imgur](https://i.imgur.com/vBbS6Vj.png?1)
+
+[see local](images/T7InsertionDesign.png)
+
+The two enzymes I cut with are BglII and HindIII which are one-cutters. The T7 promotor was designed with an extra g for better transcription performance, and ordered with 5' phosphorylation.
+
+----------------------------------
+
+**The layout of this experiment is as follows:**
+
+* run cut  
+* clen  
+* run clean  
+* anneal  
+* ligate  
+* transform  
+
+
+----------------------------------
+
+## run cut
+
+run gel 1.5% agaros for cut   product fb gfp  
+0.45 g agarose 30ml tbe 1.5   microliter gelred x20K  
+
+**Seems like I took the wrong tube - tube number 004 contains the second lower elution - 96.91**  
+Nope, that was the first ilute, fix nanodrop and inventory files!  
+
+### on strip:
+
+2. gfp1 12 +2buff cut  
+3. gfp2 10+2buff cut  
+4. gfp2 2nd elut uncut 5.5+2buff  
+
+
+gel size is 6.5 X 10.2 cm  
+
+### result
+
+![Imgur](https://i.imgur.com/dJ3CKnR.png)
+
+[see local](images/dJ3CKnR - Imgur.png)
+
+
+----------------------------------
+
+## clean
+
+I have taken 12 microliters from each cut plasmid, starting at 240 now my volume is 228 microliters.
+
+Following protocol... 
+
+
+tubes: 
+X01 FBgfp1
+X02 FBgfp2
+X01.1 FBgfp1 2nd ilution
+X02.2 FBgfp2 2nd ilution
+
+
+### results:
+
+[results (nanodrop)](https://drive.google.com/file/d/1qkxsu0BP0hcq2JhW1u-EGsfPMzgQWedW/view?usp=sharing)
+
+[link to local](tables/18Aug2020_FBgfp.csv)
+
+
+----------------------------------
+
+## run clean
+
+
+----------------------------------
+
+## anneal
+
+**suspended T7 oligos:**
+
+R + 209 µl DDW  
+F + 254 µl DDW  
+
+### Annealing buffer:
+
+400 µl Tris 1M @ pH 8
+200 µl MgCl~2~ (which concentration?)
+100 µl NaCl 5M
+20 µl EDTA 0.5 M @ pH 8
+280 µl DDW
+
+[From researchgate](https://www.researchgate.net/post/What_is_the_annealing_buffer_recipe_to_anneal_two_oligos_to_create_an_adaptor)
+
+>"I usually anneal in 1x NEB restriction enzyme buffer 4.  The reaction contains 2ul of each oligo (1ug/ul), 5ul 10x NEB buffer 4 and 41ul H2O (50ul total volume).  Incubate at 98oC for 5mins in a PCR block and then remove and allow to cool slowly to room temperature.
+Dilute the annealed oligo's 1 in 250 in dH2O and use 1ul of this to ligate 100ng of plasmid in a 20ul rxn volume, overnight at 16oC. I then use 2ul to transform competent cells. I do this routinely and it always works. I never really worry to much about the insert vector ratios unless the oligos have compatible cohesive ends and can for concatamers.
+I hope this helps. Good luck with your research."
+
+By the above I made a 2nd rxn with NEBbuffer 4.
+
+>"We anneal primers at 10µM each in nuclease free water, then let them anneal without any other buffer added. We heat the samples to 95°C for 5 min, then decrease the temperature by 1 degree every second until we reach 12°C.
+We then dilute the annealed primers 1/1000 and use 1.5µl of this with 150ng of digested and dephosphorylated vecor in a 10µl TAKARA DNA ligation reaction (Clontech)and incubate 30 min at 16°C. We use 2-3µl of the reaction for bacterial transformations"
+
+Totalling: 
+1. My buffer 5 µl + 1 µl each oligo + 43 µl DDW (50µl total): oligo ng = 
+2. ntc (buffer + DDW, 50 µl)
+3. NEBbuffer 5µl + 2µl each oligo + 41µl DDW (50µl total)
+
+
+----------------------------------
+
+## Ligation
+
+Hagai took 50 ng/µl of the cut plasmid to the ligation rxn.
+from the insert he took .5 microliter of 1X stock inside 50 µl annealing rxn which is 2 micromol.
+
+**[By protocol from promega](https://worldwide.promega.com/-/media/files/resources/protocols/product-information-sheets/g/t4-dna-ligase-blue-white-cloning-qualified-protocol.pdf?la=en):**
+
+[link to local](documents/T4 DNA Ligase Blue_White Cloning Qualified 9PIM180.pdf)
+
+$\text{insert mass (ng)}=\text{ng of vector} * \frac{\text{kb size of insert}} {\text{kb size of vector}}*\text{molar ratio of }\frac{\text{insert}}{\text{vector}}$
+
+To go for $\frac{1}{3}$ and $\frac{1}{10}$ ratios I need:
+
+**Dilute clean cut plasmid:**
+
+**[X01] 20µl(92 ng/µl) + 16.8 µl DDW = 50 ng/µl**
+
+**[X02] 25µl(86 ng/µl) + 18 µl DDW = 50 ng/µl**
+
+**1:10**
+
+$\text{2.525 (ng)} \approx 2.5 nl =\text{50 ng} * \frac{\text{0.028 kb}} {\text{5.545 kb}}*\frac{\text{10}}{\text{1}}$
+
+Hence need to dilute MyBuff solution:
+
+**1µl stock + 11.8 µl DDW to reach 2.5 ng µl^-1^**
+
+Hence need to dilute NEBuff solution:
+
+**1µl stock + 27.8 µl DDW to reach 2.5 ng µl^-1^**
+
+**1:3**
+
+$\text{0.757 (ng)} \approx 1 ng =\text{50 ng} * \frac{\text{0.028 kb}} {\text{5.545 kb}}*\frac{\text{3}}{\text{1}}$
+
+Hence need to dilute MyBuff solution:
+
+**1µl stock + 31 µl DDW to reach 1 ng µl^-1^**
+
+Hence need to dilute NEBuff solution:
+
+**1µl stock + 71 µl DDW to reach 1 ng µl^-1^**
+
+### ligation rxns (strip)
+
+**1. FBgfp1 + MyBuf + X10**  
+**2. FBgfp1 +NEB + X10**  
+**3. FBgfp2 + MyBuf + X10** 
+**4. control + MyBuf + X10**  
+**5. FBgfp1 + MyBuf + X3**
+**6. FBgfp1 +NEB + X3**
+**7. FBgfp2 + MyBuf + X3**
+
+### X1 ligation rxn/ 1:3
+
+<a name="ligrxn18aug2020"></a>
+
+insert: 2 micro mol  | 1 µl  
+plasmid: 50 ng/µl | 1 micro liter after dilute  
+T4: 1.5 µl  
+T4 buff: 2 µl  
+DDW: 14.5 µl  
+Total: 20 µl  
+
+### x7 ligation rxn CHANGE TO 4
+T4: 10.5 µl 
+T4 buff: 14 µl
+DDW: 101.5 µl
+Total: 126  µl
+
+**Do!  no-insert control**
+
+Keep 16h 4°C.
+
+----------------------------------
+
+
+-----
+19Aug2020
+-----
+
+## Transformation:
+
+[Man Protocol for HIT-Dh5α High 10^8^ Cat.No: RH618 by real-biotech](http://www.real-biotech.com/index.asp?modules=product&files=p2&ID1=153)
+
+Transfered plasmid to bacteria using [this protocol](Protocols.html#HITtransfer). Total 9 plates, 7 from [here](#ligrxn18aug2020).
+

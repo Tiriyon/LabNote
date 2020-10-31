@@ -1,0 +1,88 @@
+----------
+9June2020
+----------
+
+# 19June2020 Fin clips, 19-20 May 2020 - Planning
+
+Fin clip for mut zfGNE and model ZF from May 2020 
+**Introduction:** During 19-20 may 2020 we collected fin flips from M743T KI ZF, mut zfGNE and hGNE zf KO models. 
+
+**Strip Z contained KI ZF as follows**
+
+| Strip position | Expected genotype | Fish physical position |
+| :-------------:|-------------------|:----------------------:|
+| 1              |  M743T            | A1                     |
+| 2              |  M743T            | A2                     |
+| 3              |  M743T            | A3                     |
+| 4              |  Alon alpha actin |                        |
+| 5              |  Alon alpha actin |                        |
+| 6              |  M743T            | A6                     |
+| 7              |  M743T            | A7                     |
+| 8              |  M743T            | A8                     |
+
+Even though we took FC of 4 and 5 (strip positions) we won't sequence them since there's no need to, we do need to breed them though. 
+
+**strip y goes as follows:**
+
+| strip position  | expected genotype          | fish physical position   |
+| :-------------: | -------------------------- | :----------------------: |
+| 1               | AB tg mut Cross TL zfGNE   | A9                       |
+| 2               | AB tg mut Cross TL zfGNE   | A10                      |
+| 3               | AB tg mut Cross TL zfGNE   | A11                      |
+| 4               |                            |                          |
+| 5               |                            |                          |
+| 6               |                            |                          |
+| 7               |                            |                          |
+| 8               |                            |                          |
+
+Beyond that we also got Strips A-D which contain FC from 15 dpf larvae that urgently need to be placed into a container.
+
+\newpage
+\blandscape
+
+```{r, echo=FALSE}
+x<-read.csv('tables/FCmaypoorlarvae.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+
+\elandscape
+
+\pagebreak{}{}
+
+### PCR mixes:
+
+**For Strip Z:**
+
+```{r, echo=FALSE}
+x<-read.csv('tables/9junePCRmix.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+**For the rest:**
+
+**WTS:**
+```{r, echo=FALSE}
+x<-read.csv('tables/9june2020PCRtableWTS.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+**F1_2**
+```{r, echo=FALSE}
+x<-read.csv('tables/9june2020PCRF1_2.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+\pagebreak{}{}
+

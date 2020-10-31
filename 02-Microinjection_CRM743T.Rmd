@@ -1,0 +1,503 @@
+## Microinjections on November 13^th^:
+
+*Date: November 13^th^, 2019*
+Following protocol <!-- \hyperlink{protocol1}{{\color{purple}{\underline{number 1}}}}. -->
+
+We got our \textcolor{blue}{first batch} which I now call \hypertarget{Batch number 1}{"Batch number 1"}.
+
+### Batch table:
+
+```{r, echo = FALSE}
+library(tibble)
+library(kableExtra)
+batch.file<-tribble(
+  ~Batch, ~Parents, ~`Date`, ~`Number of offsprings`, ~`Number of living offsprings`,
+  "Batch 1", "TL find out which cell" ,"Nov 13 2019", 40 , 18
+)
+kable(batch.file, "latex", booktabs = TRUE)
+```
+
+Batch 1 compiles of 40 zygotes, 27 of which were microinjected by Hagai, 13 of which were injected by me.
+See [\textcolor{purple}{my plate}](images/batch1TL_M743T_MI_Tom_nov_13_2019.jpg), or [\textcolor{purple}{Hagai's plate}](images/batch1TL_M743T_MI_hagai_nov_13_2019.jpg)
+
+Due to distance between our lab and lab 3 where the microinjections took place, along with unawareness of lack of devices such as 10 µL pipettes, we performed the injections on 8-16 cell stage zygotes (Hagai and I).
+
+In my case some of the microinjections did not enter the cell, most were inside the egg close to the cell.
+
+
+
+
+
+\pagebreak{}{}
+
+## Microinjection expertise examination Tom V Hagai
+
+\definecolor{brownyellow}{cmyk}{0, 0.72, 0.88, 0.69}
+*Date: December 10^th^, 2019*
+After conducting Microinjections on November 13^th^, I have data about \textcolor{brownyellow}{larvae's survivability after injection}. Part of the experiment's objectives was to examine my skills vs Hagai's skills. 
+
+[\textcolor{purple}{Raw data - my table}](tables/Tom_VS_Hagai_R1_Tom.csv)
+
+[\textcolor{purple}{Raw data - Hagai's table}](tables/Tom_VS_Hagai_R1_Hagai.csv)
+
+### Table 7:
+
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+# plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+# summary(DF1)
+# summary(DF2)
+kable(DF1, booktabs = TRUE)
+```
+
+### Table 8:
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+# plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+# summary(DF1)
+# summary(DF2)
+kable(DF2, "latex", booktabs = TRUE)
+```
+### Graph 1:
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+     xlab = "time passed since injection",
+     ylab = "Percent of accumulated dead zf larvae" )
+
+# plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+# summary(DF1)
+# summary(DF2)
+
+```
+
+### Graph 2:
+
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+# plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+     xlab = "time passed since injection",
+     ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+# summary(DF1)
+# summary(DF2)
+
+```
+
+### Statistical analysis
+
+#### DF1: 
+
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+# plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+summary(DF1)
+# summary(DF2)
+
+```
+
+
+#### DF2:
+
+```{r, echo=FALSE}
+library(tibble)
+library(kableExtra)
+DF1<- read.csv("tables/Tom_VS_Hagai_R1_Tom.csv") # My table
+DF2<-read.csv("tables/Tom_VS_Hagai_R1_Hagai.csv") # Hagai's table
+DF1$Dead.so.far<-with(DF1, 13-Live.Larvae) # made a new column calculate how many larvae died at that time
+DF1[1,4]<- NA # Making first cell of dead so far empty
+DF2$Dead.so.far<-with(DF2, 27-Live.Larvae)  # made a new column calculate how many larvae died at that time
+DF2[1,4]<- NA # Making first cell of dead so far empty
+# end of dataframe import
+DF1[1,4]<- as.numeric(DF1[1,4])
+DF2[1,4]<- as.numeric(DF2[1,4])
+y<-c()
+for (i in 1:length(DF1[,4])) {
+  y<- append(y, (sum(as.numeric(DF1[2:i,4]))))
+}
+# y 
+DF1$Accumulative.Dead <- y
+s<- c()
+for (i in 1:length(DF1[,4])) {
+  s<- append(s, (as.numeric(DF1[i,5])/as.numeric(DF1[8,5]))*100)
+}
+# s
+DF1$accu.dead.perc<-s
+
+# Hagai
+y<-c()
+for (i in 1:length(DF2[,4])) {
+  y<- append(y, (sum(as.numeric(DF2[2:i,4]))))
+}
+# y 
+DF2$Accumulative.Dead <- y
+
+s<- c()
+for (i in 1:length(DF2[,4])) {
+  s<- append(s, (as.numeric(DF2[i,5])/as.numeric(DF2[8,5]))*100)
+}
+# s
+DF2$accu.dead.perc<-s
+
+# End of making an accumulative column of dead %
+
+# Naming headers and adding timeline for x axis ----
+colnames(DF1)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+colnames(DF2)<- c("Date checked", 
+                  "Time of the day", 
+                  "Live count", 
+                  "Dead Count", 
+                  "Dead accumulated", 
+                  "Dead accumulated percentage")
+DF1$Time<- c(0,7,17,24,41,48,55,72)
+DF2$Time<- c(0,7,17,24,41,48,55,72)
+
+# Plotting ---- 
+
+# plot(DF1[,7],DF1[,6], type = "b", main = "Tom's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative death count by percentage",
+#      xlab = "time passed since injection",
+#      ylab = "Percent of accumulated dead zf larvae" )
+
+# statistical
+
+# summary(DF1)
+summary(DF2)
+
+```
