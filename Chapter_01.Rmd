@@ -1031,3 +1031,20 @@ kable(x, "latex", booktabs = TRUE) %>%
 ### Dna Extract
 
 • DNA extract from yesterday were put in - 20 deg.
+## 23Jun2020 CRM743T Genotyping
+in my strip box inj room fridge
+
+strip 23.06FC
+
+| Strip.pos       | Ex.Geno       | Sys.loc            |
+| :-------------: | :-----------: | :-----------:      |
+| 1               | TLwt          | old                |
+| 2               | TLwt          | old                |
+| 3               | TLwt          | old                |
+| 4               | ki            | #9fem              |
+| 5               | ki            | #29fem             |
+| 6               | ki            | #58fem             |
+| 7               | ki            | #29mal             |
+| 8               | ki            | #29mal sameasabove |
+
+
