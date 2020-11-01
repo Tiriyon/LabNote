@@ -620,3 +620,115 @@ DF2$Time<- c(0,7,17,24,41,48,55,72)
 summary(DF2)
 
 ```
+<!--Taken from V1.0 under High prioritya-->
+
+## A1 DNA extraction & PCR for sequencing, TL AB exon 3 seq
+*February 3^rd^, 2020*
+
+
+[INSERT THIS](documents/Scan_Feb_3_2020.pdf)
+
+## Exon 3 sequencing
+
+Project students require exon 3 sequence of AB and TL ZF to modify their reations based on our strains' SNPs. 
+
+* Single AB^wt^ individual from Jan 30^th^, 2020 breeding; AB genotype - \textcolor{red}{check whith hagai which parents}. 
+* Single TL^wt^, jan 26^th^, 2020 breeding; D8 parents. 
+
+Their positions on the strip [FCD#001 3.2] are:
+
+
+| 1 | 2  | 3  | 4 | 5 | 6 | 7 | 8 |
+|--:+----+----+---+---+---+---+---|
+| x | AB | TL | x | x | x | x | x |
+
+### Larvae DNA extraction protocol:
+
+For larvae samples.
+
+Place larvae in tube and let it fall asleep cooling on ice.
+
+Drain water with pipettor.
+
+Add 50 [µl] lysis buffer.
+
+Incubate for 10 [min] at 95 [°C]. 
+
+Add 2.5 [µl] Protein K.
+
+Incubate for 2-16 [h] at 55 [°C].
+
+Cool on ice.
+
+- Placed the tubes in our lab's PCR device. \textcolor{red}{need to collect tomorrow}. 
+
+### A1 FC PCR - PCRFC#001
+
+Again, for project students, these are the samples they tested nested PCR on (inner R primer specific for my KI design).
+I do believe these samples are from details established at 2017 and not my details.
+
+* Took a 1:10 dilution from stock DNA extract made by Hagai on FC from A1 details (Are now in genotype, \textcolor{red}{write where they are now in genotype aquarium})
+* The following PCR established:
+
+PCR mix:
+
+|Content| 1X volume [µl]| 8X volume [µl]| Concentration|
+|:------|:-------------:|:--------:|:--:|
+|DNA | 1| 8.2||
+| F1 primer (M743T outer)| 1| 8.2||
+| R1 primer (M743T outer)| 1| 8.2||
+| GoTaq | 12.5| 102.5||
+| DDW| 9.5| 77.9||
+| Total| 25| 205||
+
+
+
+insert concentrations
+
+PCR conditions: Insert PCR conditions
+
+In tubes:
+
+|1|2 |3 |4|5|6|7|8|
+|:-:|:-:|:-: |:-:|:-:|:-:|:-:|:-:|
+|A1-1|A1-2|A1-3|A1-4|A1-5|A1-6|A1-7|NC|
+
+### Preparations for sequencing:
+
+Preparing primers for sequencing:
+
+|Name|DDW [µl]|100 nM (?) Primer Volume[µl]| Total| Label for sequencers|
+|:---|:---:|:---:|:-|:-:|
+|ex12 345 R|47.4|2.5|50| R1|
+|ex12 1F|47.4|2.5|50|F1|
+
+## gRNA IVT (/w GNE 2020 project team):
+
+*Date: Jan 7^th^, 2020*
+
+**INSERT PROTOCOL**
+
+**MISTAKES**
+
+* No DNase was added before RNA production(word?) was made. Gel expresses the presence of template DNA. 
+
+**DATA to collect:**
+
+* Materials, cas and other catalog numbers.
+* Number of gRNA tubes.
+* Gel run-time:
+  * 70 min, 110V
+  * 2 8 well gels
+  * 0.495g TopVision
+  * 0.459g hy-labs
+  * 33 ml TBEX0.5 
+  * Gelred
+  * 5 µl loaded to gel
+
+
+**Files:**
+* [gRNA Gel 1 Image 0.5µl IVT in 2.5µl DDW and 3µl kit buffer](images/Master 2020-01-07_17h42m09s gRNA high conc.jpg)
+* [gRNA Gel 1 Image 0.5µl IVT in 5.5µl DDW, then 3µl of that with 3µl kit buffer](images/Master 2020-01-07_17h42m09s gRNA low conc.jpg)
+* [Nanodrop results](tables/jan07_2020_IVTgRNA_Nanodrop.xml)
+
+

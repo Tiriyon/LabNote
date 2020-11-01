@@ -1,5 +1,5 @@
 <!--
-Taken from v1.0 notebook, under High priority
+Taken from v1.0 notebook, under High priority -->
 
 ## March 5^th^ 2020 - PCR 
 
@@ -195,7 +195,7 @@ kable(df, "latex", booktabs = TRUE) %>%
 
 ![Gel Electroporesis Results For mRNA injected embryos PCR for exon 13](images/mRNArescue5Mar2020.png)
 
-Inj# - injected embryow <number>, NC - Negarive control, PC - Positive control.
+Inj# - injected embryow \<number\>, NC - Negarive control, PC - Positive control.
 
 
 
@@ -208,7 +208,6 @@ Samples A5#1, #2, #3, #6, #8, #10 and #11 show 2 bands (200 & 300 bp). Samples A
 
 **NOTES:**
 
-Hagai's primers were left at Nataly's and Bar's box - [\textcolor{purple}{see image}](../images/hagaisprimerslocation4mar2020.jpg).
 
 For future reference: can we throw these? (pile of DNA extract tubes from A5 large system spawn) [\textcolor{purple}{see image}](images/pileoftubes4mar2020.jpg).
 
