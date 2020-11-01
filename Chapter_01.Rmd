@@ -119,7 +119,7 @@ kable(DF, "latex", booktabs = TRUE)
 * After injection move to Scr7 medium.
 
 
-## Microinjections on November 13^th^:
+## 13Nov2020 Microinjections:
 
 *Date: November 13^th^, 2019*
 Following protocol <!-- \hyperlink{protocol1}{{\color{purple}{\underline{number 1}}}}. -->
@@ -150,7 +150,7 @@ In my case some of the microinjections did not enter the cell, most were inside 
 
 
 
-## Microinjection expertise examination Tom V Hagai
+### Microinjection expertise examination Tom V Hagai
 
 *Date: December 10^th^, 2019*
 After conducting Microinjections on November 13^th^, I have data about larvae's survivability after injection. Part of the experiment's objectives was to examine my skills vs Hagai's skills. 
@@ -464,9 +464,8 @@ plot(DF2[,7],DF2[,6], type = "b", main = "Hagai's microinjection \naccumulative 
 
 ```
 
-### Statistical analysis
 
-#### DF1: 
+### DF1: 
 
 ```{r, echo=FALSE}
 library(tibble)
@@ -544,7 +543,7 @@ summary(DF1)
 ```
 
 
-#### DF2:
+### DF2:
 
 ```{r, echo=FALSE}
 library(tibble)
@@ -622,13 +621,14 @@ summary(DF2)
 ```
 <!--Taken from V1.0 under High prioritya-->
 
-## A1 DNA extraction & PCR for sequencing, TL AB exon 3 seq
+## 03Feb2019 A1 DNA extraction & PCR for sequencing, TL AB exon 3 seq
+
 *February 3^rd^, 2020*
 
 
 [INSERT THIS](documents/Scan_Feb_3_2020.pdf)
 
-## Exon 3 sequencing
+### Exon 3 sequencing
 
 Project students require exon 3 sequence of AB and TL ZF to modify their reations based on our strains' SNPs. 
 
@@ -702,9 +702,8 @@ Preparing primers for sequencing:
 |ex12 345 R|47.4|2.5|50| R1|
 |ex12 1F|47.4|2.5|50|F1|
 
-## gRNA IVT (/w GNE 2020 project team):
+## 07Jan2020 gRNA IVT (/w GNE 2020 project team):
 
-*Date: Jan 7^th^, 2020*
 
 **INSERT PROTOCOL**
 
@@ -753,12 +752,12 @@ C: C1-C8
 D: D1-D7
 Z: Z1-Z3, Z6-Z8, 7=NTC, 8=-
 
-## PCR programs:
+### PCR programs:
 
 `Users>HL>28WTSF`
 `System>Tom>Ex12345`
 
-## Results:
+### Results:
 
 **Strips A,B,C**
 <!-- fix img pos
@@ -774,12 +773,12 @@ knitr::include_graphics("../../365/10June2020/Master 2020-06-10_15h45m46s.png")
 -->
 Both gels: 1.5%, 120V @ 28min. 
 
-## Stored:
+### Stored:
 
 * PCR amplicons inside Molecular lab (big) at $-20° fridge.
 * DNA extracts in our lab's fridge.
 
-## Follow up:
+### Follow up:
 
 * Analyze results.
 * Repair PCR for strip Z, send to sequence. 
@@ -791,3 +790,244 @@ Both gels: 1.5%, 120V @ 28min.
 
 
 
+
+
+## 11June2020 Incubator Documentation 24well plates
+
+
+### Dish A from 2June2020
+
+
+9June2020 is 7 dpf, n=43
+From which 7 died and sampled, 8 were taken to "poor" plate, rest left. 
+10June2020 eve, n=39
+
+
+Today I replaced water and counted $n=38$.
+1 detail was moved to small dish for poor A larvae (new) (Movie_453.avi) plate markings: 
+
+
+-----
+A 11June2020 Poor details
+n=1
+-----
+
+
+
+
+### Dish B From 2June2020:
+
+
+Offspring tracking.
+9June2020 dfp = 7, n = 28
+10June2020 dpf = 8, n = 27
+10 "poor" details were separated to plate B.
+
+
+
+
+
+
+
+
+Easy peasy no one showed any lack of money.
+1 dead on lid, taken to new strip S1 at position 1
+| 1                          | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|----------------------------+---+---+---+---+---+---+---|
+| 11.6 From big dish B (2.6) |   |   |   |   |   |   |   |
+
+
+### Big dish C From 3June2020
+
+
+Cross +/- X +/- from #6
+9june2020 6dpf n=54
+
+
+
+
+11june2020 - n=48 (reafirm)
+fed and water replaced
+
+
+
+
+### 24plate B:
+
+
+#### no.55 from 8june2020
+9june n=55
+10june n=39
+11june:
+n=39
+no gfp
+
+
+#### no.48 from 8june2020
+n=60
+9june =55
+10june n=55
+11june:
+n=55
+
+
+#### inj3 09june2020
+
+
+09june n= 38
+09june n=31
+10june n=25
+11june:
+n=23
+
+
+2 details look really poor were separated
+
+
+#### inj3 control (no injection) no.79 9june2020
+n0=79
+9june n=7
+10jun n=6
+11june all still in chorion, n=6
+
+
+#### inj2 8june2020
+n0=38
+11june2020 n=
+21
+
+
+#### inj2 control 8june2020
+n0 = 10
+11june n=8
+
+\pagebreak{}{}
+
+## 15Jun2020 Nu7447
+
+Nu777 arrived look at arts an prepare stock.
+Store at 4 deg C.
+
+## 16Jun2020 CRISPR/Cas9 MI KI
+
+Inj by protocol no.
+
+Parents TL wt from system assorted tank no. 22 gave first batch of eggs. 33 of which injected, 6 put aside for control.
+
+Parents TLwt from SAT no. 24 gave a bad batch, 2nd batch 42 inj (24 live), 3rd batch missed (4 cell stg) of which 49 put aside for control.
+
+
+Took me 36 min to prep mix
+
+FAILED - NO BREADING
+
+
+### Inj ovservation and treatment:
+
+
+From:  inj 15june2020 1dpf
+
+• no. 22 CR n=13
+• no.22 control n=3
+• no. 24 CR n=3
+• no.24 Control n=9
+
+Time of treatment: 11:00
+
+### Inj ovservation and treatment:
+
+• no. 22 CR n=13
+• no.22 control n=3
+• no. 24 CR n=2
+1 sampled to **strip** (16.6 sCR AAA1) pos. 1 @ 20 µl buffer lysys. 
+• no.24 Control n=9
+
+Time of treatment: 18:08
+
+
+
+## 19June2020 Fin clips, 19-20 May 2020 - Planning
+
+Fin clip for mut zfGNE and model ZF from May 2020 
+**Introduction:** During 19-20 may 2020 we collected fin flips from M743T KI ZF, mut zfGNE and hGNE zf KO models. 
+
+**Strip Z contained KI ZF as follows**
+
+| Strip position | Expected genotype | Fish physical position |
+| :-------------:|-------------------|:----------------------:|
+| 1              |  M743T            | A1                     |
+| 2              |  M743T            | A2                     |
+| 3              |  M743T            | A3                     |
+| 4              |  Alon alpha actin |                        |
+| 5              |  Alon alpha actin |                        |
+| 6              |  M743T            | A6                     |
+| 7              |  M743T            | A7                     |
+| 8              |  M743T            | A8                     |
+
+Even though we took FC of 4 and 5 (strip positions) we won't sequence them since there's no need to, we do need to breed them though. 
+
+**strip y goes as follows:**
+
+| strip position  | expected genotype          | fish physical position   |
+| :-------------: | -------------------------- | :----------------------: |
+| 1               | AB tg mut Cross TL zfGNE   | A9                       |
+| 2               | AB tg mut Cross TL zfGNE   | A10                      |
+| 3               | AB tg mut Cross TL zfGNE   | A11                      |
+| 4               |                            |                          |
+| 5               |                            |                          |
+| 6               |                            |                          |
+| 7               |                            |                          |
+| 8               |                            |                          |
+
+Beyond that we also got Strips A-D which contain FC from 15 dpf larvae that urgently need to be placed into a container.
+
+\newpage
+\blandscape
+
+```{r, echo=FALSE}
+x<-read.csv('tables/FCmaypoorlarvae.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+
+\elandscape
+
+\pagebreak{}{}
+
+### PCR mixes:
+
+**For Strip Z:**
+
+```{r, echo=FALSE}
+x<-read.csv('tables/9junePCRmix.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+**For the rest:**
+
+**WTS:**
+```{r, echo=FALSE}
+x<-read.csv('tables/9june2020PCRtableWTS.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+**F1_2**
+```{r, echo=FALSE}
+x<-read.csv('tables/9june2020PCRF1_2.csv')
+library(knitr)
+library(kableExtra)
+kable(x, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+### Dna Extract
+
+• DNA extract from yesterday were put in - 20 deg.
