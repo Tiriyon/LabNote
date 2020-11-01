@@ -1,4 +1,7 @@
-prerequisites
+tab:unnamed-chunk-19
+tab:unnamed-chunk-20
+introduction
+links
 m743t-ki-modeling
 nov2019-crisprcas9-with-hd-zebrafish-zygote-microinjection-protocol
 nov2020-microinjections
@@ -98,6 +101,14 @@ sep2020-new-digestions
 sep2020-fbgfp-after-t7-splicing-gel-analysis-1
 t4-and-re-qa
 gel-0.8-120v-35-min
+oct2020-planing-for-october-sunday-25th-2020
+sequential-digestion-with-two-incompatible-enzymes
+t7-oligo-annealing
+clean-plasmid-before-ligation
+plasmid-t7-ligation
+t7-ligation---redo-26th-october---monday
+oct2020-fb-pcr
+pcr-reaction-calibration
 journal
 june2020-gne-protein-visualization-in-vivo-thoughts
 jun2020-learned-total-rna-extraction-from-hagai
