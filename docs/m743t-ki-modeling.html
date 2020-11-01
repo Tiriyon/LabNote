@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 M743T KI modeling | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 M743T KI modeling | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 M743T KI modeling | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2020-11-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="frankenbodies.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html"><i class="fa fa-check"></i><b>2</b> M743T KI modeling</a><ul>
+<li class="chapter" data-level="2.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#nov2019-crisprcas9-with-hd-zebrafish-zygote-microinjection-protocol"><i class="fa fa-check"></i><b>2.1</b> 13Nov2019 CRISPR/Cas9 (with HD) zebrafish zygote microinjection protocol:</a></li>
+<li class="chapter" data-level="2.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#nov2020-microinjections"><i class="fa fa-check"></i><b>2.2</b> 13Nov2020 Microinjections:</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#batch-table"><i class="fa fa-check"></i><b>2.2.1</b> Batch table:</a></li>
+<li class="chapter" data-level="2.2.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#microinjection-expertise-examination-tom-v-hagai"><i class="fa fa-check"></i><b>2.2.2</b> Microinjection expertise examination Tom V Hagai</a></li>
+<li class="chapter" data-level="2.2.3" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#table-7"><i class="fa fa-check"></i><b>2.2.3</b> Table 7:</a></li>
+<li class="chapter" data-level="2.2.4" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#table-8"><i class="fa fa-check"></i><b>2.2.4</b> Table 8:</a></li>
+<li class="chapter" data-level="2.2.5" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#graph-1"><i class="fa fa-check"></i><b>2.2.5</b> Graph 1:</a></li>
+<li class="chapter" data-level="2.2.6" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#graph-2"><i class="fa fa-check"></i><b>2.2.6</b> Graph 2:</a></li>
+<li class="chapter" data-level="2.2.7" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#df1"><i class="fa fa-check"></i><b>2.2.7</b> DF1:</a></li>
+<li class="chapter" data-level="2.2.8" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#df2"><i class="fa fa-check"></i><b>2.2.8</b> DF2:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#feb2019-a1-dna-extraction-pcr-for-sequencing-tl-ab-exon-3-seq"><i class="fa fa-check"></i><b>2.3</b> 03Feb2019 A1 DNA extraction &amp; PCR for sequencing, TL AB exon 3 seq</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#exon-3-sequencing"><i class="fa fa-check"></i><b>2.3.1</b> Exon 3 sequencing</a></li>
+<li class="chapter" data-level="2.3.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#larvae-dna-extraction-protocol"><i class="fa fa-check"></i><b>2.3.2</b> Larvae DNA extraction protocol:</a></li>
+<li class="chapter" data-level="2.3.3" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#a1-fc-pcr---pcrfc001"><i class="fa fa-check"></i><b>2.3.3</b> A1 FC PCR - PCRFC#001</a></li>
+<li class="chapter" data-level="2.3.4" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#preparations-for-sequencing"><i class="fa fa-check"></i><b>2.3.4</b> Preparations for sequencing:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#jan2020-grna-ivt-w-gne-2020-project-team"><i class="fa fa-check"></i><b>2.4</b> 07Jan2020 gRNA IVT (/w GNE 2020 project team):</a></li>
+<li class="chapter" data-level="2.5" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#june2020-fin-clips-19-20-may-2020---lab-procedure-and-results"><i class="fa fa-check"></i><b>2.5</b> 10June2020 Fin clips, 19-20 May 2020 - Lab procedure and results</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#pcr-preparation"><i class="fa fa-check"></i><b>2.5.1</b> PCR preparation:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#pcr-strip"><i class="fa fa-check"></i><b>2.6</b> PCR strip</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#pcr-programs"><i class="fa fa-check"></i><b>2.6.1</b> PCR programs:</a></li>
+<li class="chapter" data-level="2.6.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#results"><i class="fa fa-check"></i><b>2.6.2</b> Results:</a></li>
+<li class="chapter" data-level="2.6.3" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#stored"><i class="fa fa-check"></i><b>2.6.3</b> Stored:</a></li>
+<li class="chapter" data-level="2.6.4" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#follow-up"><i class="fa fa-check"></i><b>2.6.4</b> Follow up:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#june2020-incubator-documentation-24well-plates"><i class="fa fa-check"></i><b>2.7</b> 11June2020 Incubator Documentation 24well plates</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#dish-a-from-2june2020"><i class="fa fa-check"></i><b>2.7.1</b> Dish A from 2June2020</a></li>
+<li class="chapter" data-level="2.7.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#dish-b-from-2june2020"><i class="fa fa-check"></i><b>2.7.2</b> Dish B From 2June2020:</a></li>
+<li class="chapter" data-level="2.7.3" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#big-dish-c-from-3june2020"><i class="fa fa-check"></i><b>2.7.3</b> Big dish C From 3June2020</a></li>
+<li class="chapter" data-level="2.7.4" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#plate-b"><i class="fa fa-check"></i><b>2.7.4</b> 24plate B:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#jun2020-nu7447"><i class="fa fa-check"></i><b>2.8</b> 15Jun2020 Nu7447</a></li>
+<li class="chapter" data-level="2.9" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#jun2020-crisprcas9-mi-ki"><i class="fa fa-check"></i><b>2.9</b> 16Jun2020 CRISPR/Cas9 MI KI</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#inj-ovservation-and-treatment"><i class="fa fa-check"></i><b>2.9.1</b> Inj ovservation and treatment:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#inj-ovservation-and-treatment-1"><i class="fa fa-check"></i><b>2.9.2</b> Inj ovservation and treatment:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#june2020-fin-clips-19-20-may-2020---planning"><i class="fa fa-check"></i><b>2.10</b> 19June2020 Fin clips, 19-20 May 2020 - Planning</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#pcr-mixes"><i class="fa fa-check"></i><b>2.10.1</b> PCR mixes:</a></li>
+<li class="chapter" data-level="2.10.2" data-path="m743t-ki-modeling.html"><a href="m743t-ki-modeling.html#dna-extract"><i class="fa fa-check"></i><b>2.10.2</b> Dna Extract</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="frankenbodies.html"><a href="frankenbodies.html"><i class="fa fa-check"></i><b>3</b> Frankenbodies</a><ul>
+<li class="chapter" data-level="3.1" data-path="frankenbodies.html"><a href="frankenbodies.html#jun2020-frankenbodies-arrival"><i class="fa fa-check"></i><b>3.1</b> 27Jun2020 Frankenbodies arrival</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="frankenbodies.html"><a href="frankenbodies.html#frankenbodies-plasmids"><i class="fa fa-check"></i><b>3.1.1</b> Frankenbodies plasmids:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="frankenbodies.html"><a href="frankenbodies.html#frankenbodies-colony-seeding"><i class="fa fa-check"></i><b>3.2</b> Frankenbodies colony seeding</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="frankenbodies.html"><a href="frankenbodies.html#jun2020-seeded-bacteria-containing-frankenbody-plasmids-fb"><i class="fa fa-check"></i><b>3.2.1</b> 27Jun2020 Seeded bacteria containing Frankenbody plasmids (FB)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="frankenbodies.html"><a href="frankenbodies.html#july2020-frankenbodies-plasmid-arrival-streaking-cultures"><i class="fa fa-check"></i><b>3.3</b> 27July2020 Frankenbodies plasmid arrival, streaking cultures</a></li>
+<li class="chapter" data-level="3.4" data-path="frankenbodies.html"><a href="frankenbodies.html#july2020-colony-streaking-of-arrived-frankenbody-plasmids-colonies"><i class="fa fa-check"></i><b>3.4</b> 27July2020 Colony streaking of arrived frankenbody plasmids colonies</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="frankenbodies.html"><a href="frankenbodies.html#day-1-27july2020"><i class="fa fa-check"></i><b>3.4.1</b> Day 1 27July2020</a></li>
+<li class="chapter" data-level="3.4.2" data-path="frankenbodies.html"><a href="frankenbodies.html#day-2-28july2020"><i class="fa fa-check"></i><b>3.4.2</b> Day 2 28July2020</a></li>
+<li class="chapter" data-level="3.4.3" data-path="frankenbodies.html"><a href="frankenbodies.html#day-3-29july2020"><i class="fa fa-check"></i><b>3.4.3</b> Day 3 29July2020</a></li>
+<li class="chapter" data-level="3.4.4" data-path="frankenbodies.html"><a href="frankenbodies.html#day-4-30july2020"><i class="fa fa-check"></i><b>3.4.4</b> Day 4 30July2020</a></li>
+<li class="chapter" data-level="3.4.5" data-path="frankenbodies.html"><a href="frankenbodies.html#day-5-31july2020"><i class="fa fa-check"></i><b>3.4.5</b> Day 5 31July2020</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="frankenbodies.html"><a href="frankenbodies.html#aug2020---pcmv-15f11-ha-mch-figuring-out-how-to-make-it-go-ivt"><i class="fa fa-check"></i><b>3.5</b> 04Aug2020 - pCMV-15F11-HA-mCh: Figuring out how to make it go IVT</a></li>
+<li class="chapter" data-level="3.6" data-path="frankenbodies.html"><a href="frankenbodies.html#thursday-to-09aug2020---pcdna3.1-dnm1-ha-plasmid-transfection-and-cloning"><i class="fa fa-check"></i><b>3.6</b> Thursday to 09Aug2020 - pcDNA3.1-DNM1-HA plasmid transfection and cloning</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="frankenbodies.html"><a href="frankenbodies.html#aug2020---dynamin-ha-plasmid-digestion"><i class="fa fa-check"></i><b>3.6.1</b> 10Aug2020 - Dynamin-HA plasmid digestion</a></li>
+<li class="chapter" data-level="3.6.2" data-path="frankenbodies.html"><a href="frankenbodies.html#biological-hood-preparation"><i class="fa fa-check"></i><b>3.6.2</b> Biological hood preparation:</a></li>
+<li class="chapter" data-level="3.6.3" data-path="frankenbodies.html"><a href="frankenbodies.html#antibiotics-preparations"><i class="fa fa-check"></i><b>3.6.3</b> Antibiotics preparations:</a></li>
+<li class="chapter" data-level="3.6.4" data-path="frankenbodies.html"><a href="frankenbodies.html#plate-preparation"><i class="fa fa-check"></i><b>3.6.4</b> Plate preparation:</a></li>
+<li class="chapter" data-level="3.6.5" data-path="frankenbodies.html"><a href="frankenbodies.html#streaking"><i class="fa fa-check"></i><b>3.6.5</b> Streaking:</a></li>
+<li class="chapter" data-level="3.6.6" data-path="frankenbodies.html"><a href="frankenbodies.html#colony-isolation"><i class="fa fa-check"></i><b>3.6.6</b> Colony isolation</a></li>
+<li class="chapter" data-level="3.6.7" data-path="frankenbodies.html"><a href="frankenbodies.html#glycerol-stock"><i class="fa fa-check"></i><b>3.6.7</b> Glycerol stock</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="frankenbodies.html"><a href="frankenbodies.html#jul2020-streaking-colony-isolation"><i class="fa fa-check"></i><b>3.7</b> 27Jul2020 <span>Streaking</span> colony isolation:</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="frankenbodies.html"><a href="frankenbodies.html#materials-1"><i class="fa fa-check"></i><b>3.7.1</b> Materials:</a></li>
+<li class="chapter" data-level="3.7.2" data-path="frankenbodies.html"><a href="frankenbodies.html#biological-hood-preparation-1"><i class="fa fa-check"></i><b>3.7.2</b> Biological hood preparation:</a></li>
+<li class="chapter" data-level="3.7.3" data-path="frankenbodies.html"><a href="frankenbodies.html#antibiotics-preparations-1"><i class="fa fa-check"></i><b>3.7.3</b> Antibiotics preparations:</a></li>
+<li class="chapter" data-level="3.7.4" data-path="frankenbodies.html"><a href="frankenbodies.html#plate-preparation-1"><i class="fa fa-check"></i><b>3.7.4</b> Plate preparation:</a></li>
+<li class="chapter" data-level="3.7.5" data-path="frankenbodies.html"><a href="frankenbodies.html#streaking-1"><i class="fa fa-check"></i><b>3.7.5</b> Streaking:</a></li>
+<li class="chapter" data-level="3.7.6" data-path="frankenbodies.html"><a href="frankenbodies.html#colony-isolation-1"><i class="fa fa-check"></i><b>3.7.6</b> Colony isolation</a></li>
+<li class="chapter" data-level="3.7.7" data-path="frankenbodies.html"><a href="frankenbodies.html#glycerol-stock-1"><i class="fa fa-check"></i><b>3.7.7</b> Glycerol stock</a></li>
+<li class="chapter" data-level="3.7.8" data-path="frankenbodies.html"><a href="frankenbodies.html#hit-dh5α-high-108-cat.no-rh618-by-real-biotech"><i class="fa fa-check"></i><b>3.7.8</b> HIT-Dh5α High 10<sup>8</sup> Cat.No: RH618 by real-biotech</a></li>
+<li class="chapter" data-level="3.7.9" data-path="frankenbodies.html"><a href="frankenbodies.html#procedure"><i class="fa fa-check"></i><b>3.7.9</b> Procedure:</a></li>
+<li class="chapter" data-level="3.7.10" data-path="frankenbodies.html"><a href="frankenbodies.html#t7-splicing-fbgfp-cmv-t7-insertion"><i class="fa fa-check"></i><b>3.7.10</b> T7 Splicing: FBgfp CMV T7 insertion</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="frankenbodies.html"><a href="frankenbodies.html#sep2020-fbgfp-after-t7-splicing-gel-analysis"><i class="fa fa-check"></i><b>3.8</b> 08Sep2020 FBgfp After T7 splicing, gel analysis</a></li>
+<li class="chapter" data-level="3.9" data-path="frankenbodies.html"><a href="frankenbodies.html#sep2020-danger-danger---high-voltage---the-experiment-f-a-i-l-e-d"><i class="fa fa-check"></i><b>3.9</b> 09Sep2020 Danger danger - High Voltage - The experiment F A I L E D</a><ul>
+<li class="chapter" data-level="3.9.1" data-path="frankenbodies.html"><a href="frankenbodies.html#sep2020-new-digestions"><i class="fa fa-check"></i><b>3.9.1</b> 09Sep2020 New Digestions:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="frankenbodies.html"><a href="frankenbodies.html#sep2020-fbgfp-after-t7-splicing-gel-analysis-1"><i class="fa fa-check"></i><b>3.10</b> 13Sep2020 FBgfp After T7 splicing, gel analysis</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="frankenbodies.html"><a href="frankenbodies.html#t4-and-re-qa"><i class="fa fa-check"></i><b>3.10.1</b> T4 and RE QA:</a></li>
+<li class="chapter" data-level="3.10.2" data-path="frankenbodies.html"><a href="frankenbodies.html#gel-0.8-120v-35-min"><i class="fa fa-check"></i><b>3.10.2</b> Gel 0.8%, 120V, 35 min:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="journal.html"><a href="journal.html"><i class="fa fa-check"></i><b>4</b> Journal</a><ul>
+<li class="chapter" data-level="4.1" data-path="journal.html"><a href="journal.html#june2020-gne-protein-visualization-in-vivo-thoughts"><i class="fa fa-check"></i><b>4.1</b> 20June2020 GNE protein visualization <em>in vivo</em>: Thoughts</a></li>
+<li class="chapter" data-level="4.2" data-path="journal.html"><a href="journal.html#jun2020-learned-total-rna-extraction-from-hagai"><i class="fa fa-check"></i><b>4.2</b> 27Jun2020 Learned total RNA extraction from Hagai</a></li>
+<li class="chapter" data-level="4.3" data-path="journal.html"><a href="journal.html#materials-3"><i class="fa fa-check"></i><b>4.3</b> Materials:</a></li>
+<li class="chapter" data-level="4.4" data-path="journal.html"><a href="journal.html#procedure-1"><i class="fa fa-check"></i><b>4.4</b> Procedure:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="junk.html"><a href="junk.html"><i class="fa fa-check"></i><b>5</b> Junk</a><ul>
+<li class="chapter" data-level="5.1" data-path="junk.html"><a href="junk.html#march-5th-2020---pcr"><i class="fa fa-check"></i><b>5.1</b> March 5<sup>th</sup> 2020 - PCR</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="junk.html"><a href="junk.html#mix-a"><i class="fa fa-check"></i><b>5.1.1</b> Mix A:</a></li>
+<li class="chapter" data-level="5.1.2" data-path="junk.html"><a href="junk.html#mix-b"><i class="fa fa-check"></i><b>5.1.2</b> Mix B:</a></li>
+<li class="chapter" data-level="5.1.3" data-path="junk.html"><a href="junk.html#gel-electroporesis-results-for-a5-details-pcr-for-exon-13"><i class="fa fa-check"></i><b>5.1.3</b> Gel Electroporesis Results For A5 details PCR for exon 13</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="junk.html"><a href="junk.html#june2020-fin-clips-19-20-may-2020---planning-1"><i class="fa fa-check"></i><b>5.2</b> 19June2020 Fin clips, 19-20 May 2020 - Planning</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="junk.html"><a href="junk.html#pcr-mixes-1"><i class="fa fa-check"></i><b>5.2.1</b> PCR mixes:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="junk.html"><a href="junk.html#july2020-zfish-talk"><i class="fa fa-check"></i><b>5.3</b> 15July2020 zFish Talk:</a></li>
+<li class="chapter" data-level="5.4" data-path="junk.html"><a href="junk.html#july2020-zfish-talk-1"><i class="fa fa-check"></i><b>5.4</b> 16July2020 zFish Talk:</a></li>
+<li class="chapter" data-level="5.5" data-path="junk.html"><a href="junk.html#july2020-zfish-talk-2"><i class="fa fa-check"></i><b>5.5</b> 17July2020 zFish Talk</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="m743t-ki-modeling" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> M743T KI modeling</h1>
+<!-- Below was Taken from V1.0 - Protocols: CRISPR/Cas9 (with HD) zebrafish zygote microinjection protocol -->
+<div id="nov2019-crisprcas9-with-hd-zebrafish-zygote-microinjection-protocol" class="section level2">
+<h2><span class="header-section-number">2.1</span> 13Nov2019 CRISPR/Cas9 (with HD) zebrafish zygote microinjection protocol:</h2>
+<!-- \hypertarget{protocol1}{protocol number 1} -->
+<p><strong>ssODN dilution:</strong></p>
+<p>Stock ssODN (M743T HD) is concentrated to 5932 ng/µg, dilution is required for injection mix preperation.</p>
+<p>Mix material by Table 1’s instructions on ice. Afterwards carry out vortex and spindown.</p>
+<p><strong>Table 1 - ssODN dilution:</strong></p>
+
+<p><strong>Cas9 protein dilution:</strong></p>
+<p>Stock Cas9 (protein) is concentrated to 5000 ng/µg, dilution is required for injection mix preperation.</p>
+<p>Mix material by Table 2’s instructions on ice. Afterwards carry out vortex and spindown.</p>
+<p><strong>Table 2:</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="11%" />
+<col width="25%" />
+<col width="17%" />
+<col width="6%" />
+<col width="23%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Material</th>
+<th>Initial Concentration</th>
+<th>Volume to pick</th>
+<th>DDW</th>
+<th>final concontration</th>
+<th>Final Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cas9</td>
+<td>5000 ng/µL</td>
+<td>1 µL</td>
+<td>4 µL</td>
+<td>1000 ng/µg</td>
+<td>12 µL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cas9/gRNA complex formation</strong></p>
+<p>Mix:</p>
+<ul>
+<li>DDW from Table 3 microinjection mix.</li>
+<li>Cas9 from Table 3 microinjection mix.</li>
+<li>gRNA from Table 3 microinjection mix.</li>
+</ul>
+<p>Place in incubation at 37°C for ~10 miutes.</p>
+<p><strong>Injection mix:</strong></p>
+<p>On ice, mix the following materials. Perform vortex and spindown.</p>
+<strong>Table 3:</strong>
+
+<p><strong>Scr7 Dilution:</strong></p>
+<p>In a 50 ml falcon tube:</p>
+<p><strong>Table 4:</strong></p>
+
+<p><strong>DMSO Dilution:</strong></p>
+<p>In a 50 ml falcon tube:</p>
+<p><strong>Table 5:</strong></p>
+
+<p><strong>Injection:</strong></p>
+<ul>
+<li>After zf mate - TL type, injection volume ~2 nL of injection mix (table 3), inject embryos at 1-cell stage on agarose gel track plate (pre heated to 28.5°C).</li>
+<li>Keep a few embryos uninjected for negative control.</li>
+<li>After injection move to Scr7 medium.</li>
+</ul>
+</div>
+<div id="nov2020-microinjections" class="section level2">
+<h2><span class="header-section-number">2.2</span> 13Nov2020 Microinjections:</h2>
+<p><em>Date: November 13<sup>th</sup>, 2019</em>
+Following protocol <!-- \hyperlink{protocol1}{{\color{purple}{\underline{number 1}}}}. --></p>
+<p>We got our first batch which I now call Batch number 1.</p>
+<div id="batch-table" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Batch table:</h3>
+
+<p>Batch 1 compiles of 40 zygotes, 27 of which were microinjected by Hagai, 13 of which were injected by me.
+See <a href="images/batch1TL_M743T_MI_Tom_nov_13_2019.jpg">my plate</a>, or <a href="images/batch1TL_M743T_MI_hagai_nov_13_2019.jpg">Hagai’s plate</a></p>
+<p>Due to distance between our lab and lab 3 where the microinjections took place, along with unawareness of lack of devices such as 10 µL pipettes, we performed the injections on 8-16 cell stage zygotes (Hagai and I).</p>
+<p>In my case some of the microinjections did not enter the cell, most were inside the egg close to the cell.</p>
+</div>
+<div id="microinjection-expertise-examination-tom-v-hagai" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Microinjection expertise examination Tom V Hagai</h3>
+<p><em>Date: December 10<sup>th</sup>, 2019</em>
+After conducting Microinjections on November 13<sup>th</sup>, I have data about larvae’s survivability after injection. Part of the experiment’s objectives was to examine my skills vs Hagai’s skills.</p>
+<p><a href="tables/Tom_VS_Hagai_R1_Tom.csv">Raw data - my table</a></p>
+<p><a href="tables/Tom_VS_Hagai_R1_Hagai.csv">Raw data - Hagai’s table</a></p>
+</div>
+<div id="table-7" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Table 7:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Date checked
+</th>
+<th style="text-align:left;">
+Time of the day
+</th>
+<th style="text-align:right;">
+Live count
+</th>
+<th style="text-align:right;">
+Dead Count
+</th>
+<th style="text-align:right;">
+Dead accumulated
+</th>
+<th style="text-align:right;">
+Dead accumulated percentage
+</th>
+<th style="text-align:right;">
+Time
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+13-Nov
+</td>
+<td style="text-align:left;">
+Morning
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13-Nov
+</td>
+<td style="text-align:left;">
+Evening
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.00000
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14-Nov
+</td>
+<td style="text-align:left;">
+Morning
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+14.63415
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14-Nov
+</td>
+<td style="text-align:left;">
+Evening
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+31.70732
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15-Nov
+</td>
+<td style="text-align:left;">
+Morning
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+48.78049
+</td>
+<td style="text-align:right;">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15-Nov
+</td>
+<td style="text-align:left;">
+Evening
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+65.85366
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16-Nov
+</td>
+<td style="text-align:left;">
+Morning
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+82.92683
+</td>
+<td style="text-align:right;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16-Nov
+</td>
+<td style="text-align:left;">
+Evening
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+100.00000
+</td>
+<td style="text-align:right;">
+72
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-8" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Table 8:</h3>
+
+</div>
+<div id="graph-1" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Graph 1:</h3>
+<p><img src="LabNote_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="graph-2" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Graph 2:</h3>
+<p><img src="LabNote_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="df1" class="section level3">
+<h3><span class="header-section-number">2.2.7</span> DF1:</h3>
+<pre><code>##  Date checked Time of the day   Live count       Dead Count    Dead accumulated
+##  13-Nov:2     Evening:4       Min.   : 6.000   Min.   :0.000   Min.   : 0.00   
+##  14-Nov:2     Morning:4       1st Qu.: 6.000   1st Qu.:6.500   1st Qu.: 9.50   
+##  15-Nov:2                     Median : 6.000   Median :7.000   Median :20.00   
+##  16-Nov:2                     Mean   : 7.875   Mean   :5.857   Mean   :20.14   
+##                               3rd Qu.: 8.500   3rd Qu.:7.000   3rd Qu.:30.50   
+##                               Max.   :13.000   Max.   :7.000   Max.   :41.00   
+##                                                NA&#39;s   :1       NA&#39;s   :1       
+##  Dead accumulated percentage      Time      
+##  Min.   :  0.00              Min.   : 0.00  
+##  1st Qu.: 23.17              1st Qu.:14.50  
+##  Median : 48.78              Median :32.50  
+##  Mean   : 49.13              Mean   :33.00  
+##  3rd Qu.: 74.39              3rd Qu.:49.75  
+##  Max.   :100.00              Max.   :72.00  
+##  NA&#39;s   :1</code></pre>
+</div>
+<div id="df2" class="section level3">
+<h3><span class="header-section-number">2.2.8</span> DF2:</h3>
+<pre><code>##  Date checked Time of the day   Live count      Dead Count    Dead accumulated
+##  13-Nov:2     Evening:4       Min.   :12.00   Min.   : 1.00   Min.   : 1.00   
+##  14-Nov:2     Morning:4       1st Qu.:12.00   1st Qu.:13.50   1st Qu.:20.50   
+##  15-Nov:2                     Median :12.00   Median :15.00   Median :43.00   
+##  16-Nov:2                     Mean   :16.00   Mean   :12.57   Mean   :43.43   
+##                               3rd Qu.:17.75   3rd Qu.:15.00   3rd Qu.:65.50   
+##                               Max.   :27.00   Max.   :15.00   Max.   :88.00   
+##                                               NA&#39;s   :1       NA&#39;s   :1       
+##  Dead accumulated percentage      Time      
+##  Min.   :  1.136             Min.   : 0.00  
+##  1st Qu.: 23.295             1st Qu.:14.50  
+##  Median : 48.864             Median :32.50  
+##  Mean   : 49.351             Mean   :33.00  
+##  3rd Qu.: 74.432             3rd Qu.:49.75  
+##  Max.   :100.000             Max.   :72.00  
+##  NA&#39;s   :1</code></pre>
+<!--Taken from V1.0 under High prioritya-->
+</div>
+</div>
+<div id="feb2019-a1-dna-extraction-pcr-for-sequencing-tl-ab-exon-3-seq" class="section level2">
+<h2><span class="header-section-number">2.3</span> 03Feb2019 A1 DNA extraction &amp; PCR for sequencing, TL AB exon 3 seq</h2>
+<p><em>February 3<sup>rd</sup>, 2020</em></p>
+<p><a href="documents/Scan_Feb_3_2020.pdf">INSERT THIS</a></p>
+<div id="exon-3-sequencing" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Exon 3 sequencing</h3>
+<p>Project students require exon 3 sequence of AB and TL ZF to modify their reations based on our strains’ SNPs.</p>
+<ul>
+<li>Single AB<sup>wt</sup> individual from Jan 30<sup>th</sup>, 2020 breeding; AB genotype - .</li>
+<li>Single TL<sup>wt</sup>, jan 26<sup>th</sup>, 2020 breeding; D8 parents.</li>
+</ul>
+<p>Their positions on the strip [FCD#001 3.2] are:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">x</td>
+<td>AB</td>
+<td>TL</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="larvae-dna-extraction-protocol" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Larvae DNA extraction protocol:</h3>
+<p>For larvae samples.</p>
+<p>Place larvae in tube and let it fall asleep cooling on ice.</p>
+<p>Drain water with pipettor.</p>
+<p>Add 50 [µl] lysis buffer.</p>
+<p>Incubate for 10 [min] at 95 [°C].</p>
+<p>Add 2.5 [µl] Protein K.</p>
+<p>Incubate for 2-16 [h] at 55 [°C].</p>
+<p>Cool on ice.</p>
+<ul>
+<li>Placed the tubes in our lab’s PCR device. .</li>
+</ul>
+</div>
+<div id="a1-fc-pcr---pcrfc001" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> A1 FC PCR - PCRFC#001</h3>
+<p>Again, for project students, these are the samples they tested nested PCR on (inner R primer specific for my KI design).
+I do believe these samples are from details established at 2017 and not my details.</p>
+<ul>
+<li>Took a 1:10 dilution from stock DNA extract made by Hagai on FC from A1 details (Are now in genotype, )</li>
+<li>The following PCR established:</li>
+</ul>
+<p>PCR mix:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Content</th>
+<th align="center">1X volume [µl]</th>
+<th align="center">8X volume [µl]</th>
+<th align="center">Concentration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">DNA</td>
+<td align="center">1</td>
+<td align="center">8.2</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">F1 primer (M743T outer)</td>
+<td align="center">1</td>
+<td align="center">8.2</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">R1 primer (M743T outer)</td>
+<td align="center">1</td>
+<td align="center">8.2</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">GoTaq</td>
+<td align="center">12.5</td>
+<td align="center">102.5</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">DDW</td>
+<td align="center">9.5</td>
+<td align="center">77.9</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left">Total</td>
+<td align="center">25</td>
+<td align="center">205</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>insert concentrations</p>
+<p>PCR conditions: Insert PCR conditions</p>
+<p>In tubes:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A1-1</td>
+<td align="center">A1-2</td>
+<td align="center">A1-3</td>
+<td align="center">A1-4</td>
+<td align="center">A1-5</td>
+<td align="center">A1-6</td>
+<td align="center">A1-7</td>
+<td align="center">NC</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="preparations-for-sequencing" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Preparations for sequencing:</h3>
+<p>Preparing primers for sequencing:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="center">DDW [µl]</th>
+<th align="center">100 nM (?) Primer Volume[µl]</th>
+<th align="left">Total</th>
+<th align="center">Label for sequencers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ex12 345 R</td>
+<td align="center">47.4</td>
+<td align="center">2.5</td>
+<td align="left">50</td>
+<td align="center">R1</td>
+</tr>
+<tr class="even">
+<td align="left">ex12 1F</td>
+<td align="center">47.4</td>
+<td align="center">2.5</td>
+<td align="left">50</td>
+<td align="center">F1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="jan2020-grna-ivt-w-gne-2020-project-team" class="section level2">
+<h2><span class="header-section-number">2.4</span> 07Jan2020 gRNA IVT (/w GNE 2020 project team):</h2>
+<p><strong>INSERT PROTOCOL</strong></p>
+<p><strong>MISTAKES</strong></p>
+<ul>
+<li>No DNase was added before RNA production(word?) was made. Gel expresses the presence of template DNA.</li>
+</ul>
+<p><strong>DATA to collect:</strong></p>
+<ul>
+<li>Materials, cas and other catalog numbers.</li>
+<li>Number of gRNA tubes.</li>
+<li>Gel run-time:
+<ul>
+<li>70 min, 110V</li>
+<li>2 8 well gels</li>
+<li>0.495g TopVision</li>
+<li>0.459g hy-labs</li>
+<li>33 ml TBEX0.5</li>
+<li>Gelred</li>
+<li>5 µl loaded to gel</li>
+</ul></li>
+</ul>
+<p><strong>Files:</strong>
+* <a href="images/Master%202020-01-07_17h42m09s%20gRNA%20high%20conc.jpg">gRNA Gel 1 Image 0.5µl IVT in 2.5µl DDW and 3µl kit buffer</a>
+* <a href="images/Master%202020-01-07_17h42m09s%20gRNA%20low%20conc.jpg">gRNA Gel 1 Image 0.5µl IVT in 5.5µl DDW, then 3µl of that with 3µl kit buffer</a>
+* <a href="tables/jan07_2020_IVTgRNA_Nanodrop.xml">Nanodrop results</a></p>
+</div>
+<div id="june2020-fin-clips-19-20-may-2020---lab-procedure-and-results" class="section level2">
+<h2><span class="header-section-number">2.5</span> 10June2020 Fin clips, 19-20 May 2020 - Lab procedure and results</h2>
+<div id="pcr-preparation" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> PCR preparation:</h3>
+<ul>
+<li>Made a working stock for <code>ex12_345R</code> reverse primer for exon 12 amplification.</li>
+<li>10 <span class="math inline">\(\mu M\)</span> from <span class="math inline">\(10 \mu l\)</span> of <span class="math inline">\(100 \mu M\)</span> stock and <span class="math inline">\(90 \mu l\)</span> DDW.</li>
+<li>I will PCR only strips: A-D + Z.</li>
+<li>A-D PCR by WTS only (need to perform F1_2 for heterozygotes screening).</li>
+<li>Strips A-D + Z were boiled at $95 $ for 10 minutes.</li>
+<li>Mixes for ex12 and WTS amplifications were prepared according to 9June2020 preparation tables.</li>
+<li>DNA extract were dilute 1/40 from stock.</li>
+<li>DNA for Z was taken from a 1/10 dilution.</li>
+</ul>
+</div>
+</div>
+<div id="pcr-strip" class="section level2">
+<h2><span class="header-section-number">2.6</span> PCR strip</h2>
+<p>A: A1-A8
+B: B1-B5, 6=NTC, B7-B8
+C: C1-C8
+D: D1-D7
+Z: Z1-Z3, Z6-Z8, 7=NTC, 8=-</p>
+<div id="pcr-programs" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> PCR programs:</h3>
+<p><code>Users&gt;HL&gt;28WTSF</code>
+<code>System&gt;Tom&gt;Ex12345</code></p>
+</div>
+<div id="results" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Results:</h3>
+<p><strong>Strips A,B,C</strong>
+<!-- fix img pos
+
+```r
+knitr::include_graphics("../../365/10June2020/Master 2020-06-10_15h42m20s.png")
+```
+
+<img src="../../365/10June2020/Master 2020-06-10_15h42m20s.png" width="300 pt" />
+-->
+<strong>Strips D,Z</strong>
+<!-- fix img pos
+
+```r
+knitr::include_graphics("../../365/10June2020/Master 2020-06-10_15h45m46s.png")
+```
+
+<img src="../../365/10June2020/Master 2020-06-10_15h45m46s.png" width="300 pt" />
+-->
+Both gels: 1.5%, 120V @ 28min.</p>
+</div>
+<div id="stored" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Stored:</h3>
+<ul>
+<li>PCR amplicons inside Molecular lab (big) at $-20° fridge.</li>
+<li>DNA extracts in our lab’s fridge.</li>
+</ul>
+</div>
+<div id="follow-up" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> Follow up:</h3>
+<ul>
+<li>Analyze results.</li>
+<li>Repair PCR for strip Z, send to sequence.</li>
+<li>PCR strip Y.</li>
+<li>PCR A-D+Y, F1_2.</li>
+<li>Move Fish accordingly.</li>
+<li>Repair latex code for tables 9June2020….
+(Image for DNA extract box at daily folder)</li>
+</ul>
+</div>
+</div>
+<div id="june2020-incubator-documentation-24well-plates" class="section level2">
+<h2><span class="header-section-number">2.7</span> 11June2020 Incubator Documentation 24well plates</h2>
+<div id="dish-a-from-2june2020" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> Dish A from 2June2020</h3>
+<p>9June2020 is 7 dpf, n=43
+From which 7 died and sampled, 8 were taken to “poor” plate, rest left.
+10June2020 eve, n=39</p>
+<p>Today I replaced water and counted <span class="math inline">\(n=38\)</span>.
+1 detail was moved to small dish for poor A larvae (new) (Movie_453.avi) plate markings:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>A 11June2020 Poor details</td>
+</tr>
+<tr class="even">
+<td>n=1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dish-b-from-2june2020" class="section level3">
+<h3><span class="header-section-number">2.7.2</span> Dish B From 2June2020:</h3>
+<p>Offspring tracking.
+9June2020 dfp = 7, n = 28
+10June2020 dpf = 8, n = 27
+10 “poor” details were separated to plate B.</p>
+<p>Easy peasy no one showed any lack of money.
+1 dead on lid, taken to new strip S1 at position 1
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|—————————-+—+—+—+—+—+—+—|
+| 11.6 From big dish B (2.6) | | | | | | | |</p>
+</div>
+<div id="big-dish-c-from-3june2020" class="section level3">
+<h3><span class="header-section-number">2.7.3</span> Big dish C From 3June2020</h3>
+<p>Cross +/- X +/- from #6
+9june2020 6dpf n=54</p>
+<p>11june2020 - n=48 (reafirm)
+fed and water replaced</p>
+</div>
+<div id="plate-b" class="section level3">
+<h3><span class="header-section-number">2.7.4</span> 24plate B:</h3>
+<div id="no.55-from-8june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.1</span> no.55 from 8june2020</h4>
+<p>9june n=55
+10june n=39
+11june:
+n=39
+no gfp</p>
+</div>
+<div id="no.48-from-8june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.2</span> no.48 from 8june2020</h4>
+<p>n=60
+9june =55
+10june n=55
+11june:
+n=55</p>
+</div>
+<div id="inj3-09june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.3</span> inj3 09june2020</h4>
+<p>09june n= 38
+09june n=31
+10june n=25
+11june:
+n=23</p>
+<p>2 details look really poor were separated</p>
+</div>
+<div id="inj3-control-no-injection-no.79-9june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.4</span> inj3 control (no injection) no.79 9june2020</h4>
+<p>n0=79
+9june n=7
+10jun n=6
+11june all still in chorion, n=6</p>
+</div>
+<div id="inj2-8june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.5</span> inj2 8june2020</h4>
+<p>n0=38
+11june2020 n=
+21</p>
+</div>
+<div id="inj2-control-8june2020" class="section level4">
+<h4><span class="header-section-number">2.7.4.6</span> inj2 control 8june2020</h4>
+<p>n0 = 10
+11june n=8</p>
+
+</div>
+</div>
+</div>
+<div id="jun2020-nu7447" class="section level2">
+<h2><span class="header-section-number">2.8</span> 15Jun2020 Nu7447</h2>
+<p>Nu777 arrived look at arts an prepare stock.
+Store at 4 deg C.</p>
+</div>
+<div id="jun2020-crisprcas9-mi-ki" class="section level2">
+<h2><span class="header-section-number">2.9</span> 16Jun2020 CRISPR/Cas9 MI KI</h2>
+<p>Inj by protocol no.</p>
+<p>Parents TL wt from system assorted tank no. 22 gave first batch of eggs. 33 of which injected, 6 put aside for control.</p>
+<p>Parents TLwt from SAT no. 24 gave a bad batch, 2nd batch 42 inj (24 live), 3rd batch missed (4 cell stg) of which 49 put aside for control.</p>
+<p>Took me 36 min to prep mix</p>
+<p>FAILED - NO BREADING</p>
+<div id="inj-ovservation-and-treatment" class="section level3">
+<h3><span class="header-section-number">2.9.1</span> Inj ovservation and treatment:</h3>
+<p>From: inj 15june2020 1dpf</p>
+<p>• no. 22 CR n=13
+• no.22 control n=3
+• no. 24 CR n=3
+• no.24 Control n=9</p>
+<p>Time of treatment: 11:00</p>
+</div>
+<div id="inj-ovservation-and-treatment-1" class="section level3">
+<h3><span class="header-section-number">2.9.2</span> Inj ovservation and treatment:</h3>
+<p>• no. 22 CR n=13
+• no.22 control n=3
+• no. 24 CR n=2
+1 sampled to <strong>strip</strong> (16.6 sCR AAA1) pos. 1 @ 20 µl buffer lysys.
+• no.24 Control n=9</p>
+<p>Time of treatment: 18:08</p>
+</div>
+</div>
+<div id="june2020-fin-clips-19-20-may-2020---planning" class="section level2">
+<h2><span class="header-section-number">2.10</span> 19June2020 Fin clips, 19-20 May 2020 - Planning</h2>
+<p>Fin clip for mut zfGNE and model ZF from May 2020
+<strong>Introduction:</strong> During 19-20 may 2020 we collected fin flips from M743T KI ZF, mut zfGNE and hGNE zf KO models.</p>
+<p><strong>Strip Z contained KI ZF as follows</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Strip position</th>
+<th>Expected genotype</th>
+<th align="center">Fish physical position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td>M743T</td>
+<td align="center">A1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td>M743T</td>
+<td align="center">A2</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td>M743T</td>
+<td align="center">A3</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td>Alon alpha actin</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td>Alon alpha actin</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td>M743T</td>
+<td align="center">A6</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td>M743T</td>
+<td align="center">A7</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td>M743T</td>
+<td align="center">A8</td>
+</tr>
+</tbody>
+</table>
+<p>Even though we took FC of 4 and 5 (strip positions) we won’t sequence them since there’s no need to, we do need to breed them though.</p>
+<p><strong>strip y goes as follows:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">strip position</th>
+<th>expected genotype</th>
+<th align="center">fish physical position</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td>AB tg mut Cross TL zfGNE</td>
+<td align="center">A9</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td>AB tg mut Cross TL zfGNE</td>
+<td align="center">A10</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td>AB tg mut Cross TL zfGNE</td>
+<td align="center">A11</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Beyond that we also got Strips A-D which contain FC from 15 dpf larvae that urgently need to be placed into a container.</p>
+
+
+
+
+<div id="pcr-mixes" class="section level3">
+<h3><span class="header-section-number">2.10.1</span> PCR mixes:</h3>
+<p><strong>For Strip Z:</strong></p>
+
+<p><strong>For the rest:</strong></p>
+<strong>WTS:</strong>
+
+<strong>F1_2</strong>
+
+</div>
+<div id="dna-extract" class="section level3">
+<h3><span class="header-section-number">2.10.2</span> Dna Extract</h3>
+<p>• DNA extract from yesterday were put in - 20 deg.
+## 23Jun2020 CRM743T Genotyping
+in my strip box inj room fridge</p>
+<p>strip 23.06FC</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Strip.pos</th>
+<th align="center">Ex.Geno</th>
+<th align="center">Sys.loc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">TLwt</td>
+<td align="center">old</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">TLwt</td>
+<td align="center">old</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">TLwt</td>
+<td align="center">old</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">ki</td>
+<td align="center">#9fem</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">ki</td>
+<td align="center">#29fem</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">ki</td>
+<td align="center">#58fem</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">ki</td>
+<td align="center">#29mal</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center">ki</td>
+<td align="center">#29mal sameasabove</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="frankenbodies.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["LabNote.pdf", "LabNote.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

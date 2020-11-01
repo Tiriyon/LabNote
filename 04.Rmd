@@ -1,3 +1,4 @@
+# Junk
 <!--
 Taken from v1.0 notebook, under High priority -->
 
@@ -215,7 +216,7 @@ KO DNA sample left on yellow plate inside fume hood (right bottom corner).
 
 
 
-# 19June2020 Fin clips, 19-20 May 2020 - Planning
+## 19June2020 Fin clips, 19-20 May 2020 - Planning
 
 Fin clip for mut zfGNE and model ZF from May 2020 
 **Introduction:** During 19-20 may 2020 we collected fin flips from M743T KI ZF, mut zfGNE and hGNE zf KO models. 

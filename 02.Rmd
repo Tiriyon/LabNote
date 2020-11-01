@@ -1,3 +1,5 @@
+# Frankenbodies
+
 ## 27Jun2020 Frankenbodies arrival
 
 ToDo:
@@ -10,9 +12,9 @@ ToDo:
 
 I recieved plasmids for gfp, mCherry and gfp+6his in the form of colony stab. 
 
-### Frankenbodies colony seeding
+## Frankenbodies colony seeding
 
-## 27Jun2020 Seeded bacteria containing Frankenbody plasmids (FB)
+### 27Jun2020 Seeded bacteria containing Frankenbody plasmids (FB)
 
 On LB agar plates for isolation (isolation seeding).  
 On this day I used Ampicillin for all FBs, which was incorrect since only FB: gfpx6His had AmpR gene.  
@@ -81,7 +83,7 @@ Glycerol stocked the mix cultures, see inventory file.
 
 [For final inventory outlook check this file](tables/30july2020_inventory.ods).
 
-# 04Aug2020 - pCMV-15F11-HA-mCh: Figuring out how to make it go IVT
+## 04Aug2020 - pCMV-15F11-HA-mCh: Figuring out how to make it go IVT
 
 * Made a presentation with my workflow /home/tiriyon/TB/0MSc/ThesisNotebook/TomeOfKnowledgeV1.1/365/04Aug2020/pCMV-15F11-HA-mCh_IVTplaning  
 * Added T7 promoter sequence file  
@@ -118,13 +120,13 @@ Written on 27July2020
 
 Turn on solid incubator at 37 degrees Celsius 
 
-## Biological hood preparation:
+### Biological hood preparation:
 
 1. Pour 70% ethanol everywhere in the hood and wipe (not fully) with paper towel. 
 2. Close window and turn UV light for 30 min. 
 3. Open hood to working position and let blow for 5-15 min untill ready. 
 
-## Antibiotics preparations:
+### Antibiotics preparations:
 
 **Ampiceline:** 100mg/ml workink stock. Prepare working stock as follows:
 
@@ -165,14 +167,14 @@ Turn on solid incubator at 37 degrees Celsius
 **Dilution factor of 0.175**; e.g: 35 µl Kanamycin on 165 µl DDW (200 µl final volume, 8.75 mg/µl).
 
 
-## Plate preparation:
+### Plate preparation:
 
 1. Using sterile glass beads (5-10) smear 200 µl antibiotic for 2xplates per culture using the right antibiotics (The 0.175 factorized solution not the direct work solution!). 
 2. Move plate in straight motions to smear the antibiotic onto the agar. 
 3. Place plate lid closed and facing up (agar towards gravital force) in preheated
 incubator at 37 Celsius degrees. 
 
-## Streaking:
+### Streaking:
 
 Inside a prepared biological hood.
 
@@ -183,7 +185,7 @@ Inside a prepared biological hood.
 5. Incubate overnight at 37 Celsius degrees lid facing floor (agar towards cosmic rays).
 6. For controls, streak with new blue stabby sticks and incubate.
 
-## Colony isolation
+### Colony isolation
 
 Inside a prepared biological hood.
 
@@ -192,7 +194,7 @@ Inside a prepared biological hood.
 3. Touch a well isolated colony with blue poky thing and transfer to corresponding tube.
 4. Incubate overnight at 37 Celsius degrees.
 
-## Glycerol stock
+### Glycerol stock
 
 Inside a prepared biological hood.
 
@@ -203,13 +205,10 @@ Inside a prepared biological hood.
 
 
 
-# [Streaking](https://en.m.wikipedia.org/wiki/Streaking_(microbiology)) colony isolation:
+## 27Jul2020 [Streaking](https://en.m.wikipedia.org/wiki/Streaking_(microbiology)) colony isolation:
 
------
-Written on 27July2020
------
 
-## Materials:
+### Materials:
 
 • 2x Agar LB plates per culture.  
 • 1x Agar LB plate for negative control.  
@@ -229,13 +228,13 @@ Written on 27July2020
 
 Turn on solid incubator at 37 degrees Celsius 
 
-## Biological hood preparation:
+### Biological hood preparation:
 
 1. Pour 70% ethanol everywhere in the hood and wipe (not fully) with paper towel. 
 2. Close window and turn UV light for 30 min. 
 3. Open hood to working position and let blow for 5-15 min untill ready. 
 
-## Antibiotics preparations:
+### Antibiotics preparations:
 
 **Ampiceline:** 100mg/ml workink stock. Prepare working stock as follows:
 
@@ -277,14 +276,14 @@ Turn on solid incubator at 37 degrees Celsius
 **Dilution factor of 0.175**; e.g: 35 µl Kanamycin on 165 µl DDW (200 µl final volume, 8.75 mg/µl).
 
 
-## Plate preparation:
+### Plate preparation:
 
 1. Using sterile glass beads (5-10) smear 200 µl antibiotic for 2xplates per culture using the right antibiotics (The 0.175 factorized solution not the direct work solution!). 
 2. Move plate in straight motions to smear the antibiotic onto the agar. 
 3. Place plate lid closed and facing up (agar towards gravital force) in preheated
 incubator at 37 Celsius degrees. 
 
-## Streaking:
+### Streaking:
 
 Inside a prepared biological hood.
 
@@ -295,7 +294,7 @@ Inside a prepared biological hood.
 5. Incubate overnight at 37 Celsius degrees lid facing floor (agar towards cosmic rays).
 6. For controls, streak with new blue stabby sticks and incubate.
 
-## Colony isolation
+### Colony isolation
 
 Inside a prepared biological hood.
 
@@ -304,7 +303,7 @@ Inside a prepared biological hood.
 3. Touch a well isolated colony with blue poky thing and transfer to corresponding tube.
 4. Incubate overnight at 37 Celsius degrees.
 
-## Glycerol stock
+### Glycerol stock
 
 Inside a prepared biological hood.
 
@@ -313,29 +312,11 @@ Inside a prepared biological hood.
 3. Store at -80 Celsius degrees fridge.
 
 
-------
-19Aug2020
-------
-
-# PFA whole -mount larvae fixation
-
-## Materials:
-
-* 4% PFA
-* 50ml Falcon tube
-
-## Procedure:
-
-1. Fill 50ml tube with larvae and embryo water, place in ice until larvae sink.
-2. Remove liquid carefully to not lift larvae.
-3. Fill 10ml PFA 4%.
-
-
-# HIT-Dh5α High 10^8^ Cat.No: RH618 by real-biotech 
+### HIT-Dh5α High 10^8^ Cat.No: RH618 by real-biotech 
 <a name="HITtransfer"></a>
 [Man Protocol for HIT-Dh5α High 10^8^ Cat.No: RH618 by real-biotech](http://www.real-biotech.com/index.asp?modules=product&files=p2&ID1=153)
 
-## Materials:
+#### Materials:
 
 * Biological sterile hood
 * Ice bucket
@@ -346,9 +327,9 @@ Inside a prepared biological hood.
 * 1.5 ml tubes
 * Antibiotics (Kana/Amp)
 
-## Procedure:
+### Procedure:
 
-### Antibiotics preparations:
+#### Antibiotics preparations:
 
 **Ampiciline:** 100mg/ml working stock. Prepare working stock as follows:
 
@@ -389,14 +370,14 @@ Inside a prepared biological hood.
 
 **Dilution factor of 0.175**; e.g: 35 µl Kanamycin on 165 µl DDW (200 µl final volume, 8.75 mg/µl).
 
-### Plate prep:
+#### Plate prep:
 
 1. Using sterile glass beads (5-10) smear 200 µl antibiotic for a plates per culture using the right antibiotics (The 0.175 factorized solution not the direct work solution!). 
 2. Move plate in straight motions to smear the antibiotic onto the agar. 
 3. Place plate lid closed and facing up (agar towards gravital force) in preheated
 incubator at 37 Celsius degrees. 
 
-### Transfer:
+#### Transfer:
 
 1. Prepace ice bucket, 37°C plating beads and incubator.
 2. Thaw competent cell vial with RT until $\frac{1}{3}$~$\frac{1}{2}$ thawed.

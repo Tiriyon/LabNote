@@ -1,4 +1,6 @@
-# 20June2020 GNE protein visualization _in vivo_: Thoughts
+# Journal
+
+## 20June2020 GNE protein visualization _in vivo_: Thoughts
 
 Today's read:
 
@@ -20,3 +22,15 @@ Read [nu7441]() related article for Tommorow's injections.
 
 ## 27Jun2020 Learned total RNA extraction from Hagai 
 ToDo: copy protocol
+## 19Aug2020 PFA whole -mount larvae fixation
+
+## Materials:
+
+* 4% PFA
+* 50ml Falcon tube
+
+## Procedure:
+
+1. Fill 50ml tube with larvae and embryo water, place in ice until larvae sink.
+2. Remove liquid carefully to not lift larvae.
+3. Fill 10ml PFA 4%.
