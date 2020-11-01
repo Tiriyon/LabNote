@@ -1,6 +1,4 @@
------
-20June2020
------
+# 20June2020 GNE protein visualization _in vivo_: Thoughts
 
 Today's read:
 
@@ -19,9 +17,4 @@ Got [this](https://scholar.google.co.il/scholar?q=mannac+zebrafish+fluorescence&
 
 Read [nu7441]() related article for Tommorow's injections. 
 
-### etc procedures:
-
-• DNA extract from yesterday were put in - 20 deg.
-
-\newpage
 
