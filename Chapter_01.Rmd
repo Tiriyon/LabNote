@@ -1,9 +1,130 @@
+# M743T KI modeling
+
+<!-- Below was Taken from V1.0 - Protocols: CRISPR/Cas9 (with HD) zebrafish zygote microinjection protocol -->
+
+## 13Nov2019 CRISPR/Cas9 (with HD) zebrafish zygote microinjection protocol:
+
+<!-- \hypertarget{protocol1}{protocol number 1} -->
+
+**ssODN dilution:**
+
+Stock ssODN (M743T HD) is concentrated to 5932 ng/µg, dilution is required for injection mix preperation.
+
+Mix material by Table 1's instructions on ice. Afterwards carry out vortex and spindown.
+
+**Table 1 - ssODN dilution:**
+
+```{r, echo=FALSE}
+
+library(knitr)
+library(kableExtra)
+Material<-"dr_GNE_HDR"
+Initial.Conc<-"5932 ng/µL"
+DDW.Volume<- "11 µL"
+Volume.To.Pick<-"1 µL"
+Final.Concentration<-"12 µL"
+
+DF<-data.frame(Material, Initial.Conc, DDW.Volume, Volume.To.Pick, Final.Concentration)
+kable(DF, "latex", booktabs = TRUE)
+```
+
+
+**Cas9 protein dilution:**
+
+Stock Cas9 (protein) is concentrated to 5000 ng/µg, dilution is required for injection mix preperation.
+
+Mix material by Table 2's instructions on ice. Afterwards carry out vortex and spindown.
+
+**Table 2:**
+
+| Material | Initial Concentration | Volume to pick | DDW  | final concontration | Final Volume |
+|----------+-----------------------+----------------+------+---------------------+--------------|
+| Cas9     | 5000 ng/µL            | 1 µL           | 4 µL | 1000 ng/µg          | 12 µL        |
+
+**Cas9/gRNA complex formation**
+
+Mix:
+
+* DDW from Table 3 microinjection mix.
+* Cas9 from Table 3 microinjection mix.
+* gRNA from Table 3 microinjection mix.
+
+Place in incubation at 37°C for ~10 miutes.
+
+**Injection mix:**
+
+On ice, mix the following materials. Perform vortex and spindown.
+
+**Table 3:**
+```{r, table 3, echo = FALSE}
+Material <- c("Cas9", "gRNA",
+             "ssODN", "KCl",
+             "DDW", "final volume")
+Vol.To.Pick<- c(1,1,1,0.5,1.5,5)
+Initial.Conc<- c(1000, 1020.75, 494.999, 3000, "-", "-")
+Final.Concentration<-c(200,204.15,98.866,300,"-","-")
+
+df<-data.frame(Material,Vol.To.Pick,Initial.Conc,Final.Concentration)
+
+library(knitr)
+library(kableExtra)
+kable(df, "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = "striped")
+```
+
+**Scr7 Dilution:**
+
+In a 50 ml falcon tube:
+
+**Table 4:**
+
+```{r, echo=FALSE}
+
+library(knitr)
+library(kableExtra)
+Material<-"Scr7"
+Initial.Conc<-"4 mM"
+DDW.Volume<- "300 µL"
+Volume.To.Pick<-"30 mL"
+Final.Concentration<-"20 µM"
+
+DF<-data.frame(Material, Initial.Conc, DDW.Volume, Volume.To.Pick, Final.Concentration)
+kable(DF, "latex", booktabs = TRUE)
+```
+
+**DMSO Dilution:**
+
+In a 50 ml falcon tube:
+
+**Table 5:**
+
+```{r, echo=FALSE}
+
+library(knitr)
+library(kableExtra)
+Material<-"DMSO"
+Initial.Conc<-"X mM"
+DDW.Volume<- "300 µL"
+Volume.To.Pick<-"30 mL"
+Final.Concentration<-"20 µM"
+
+DF<-data.frame(Material, Initial.Conc, DDW.Volume, Volume.To.Pick, Final.Concentration)
+kable(DF, "latex", booktabs = TRUE)
+```
+
+**Injection:**
+
+* After zf mate - TL type, injection volume ~2 nL of injection mix (table 3), inject embryos at 1-cell stage on agarose gel track plate (pre heated to 28.5°C).
+* Keep a few embryos uninjected for negative control.
+* After injection move to Scr7 medium.
+
+
 ## Microinjections on November 13^th^:
 
 *Date: November 13^th^, 2019*
 Following protocol <!-- \hyperlink{protocol1}{{\color{purple}{\underline{number 1}}}}. -->
 
-We got our \textcolor{blue}{first batch} which I now call \hypertarget{Batch number 1}{"Batch number 1"}.
+We got our first batch which I now call Batch number 1.
 
 ### Batch table:
 
@@ -18,7 +139,7 @@ kable(batch.file, "latex", booktabs = TRUE)
 ```
 
 Batch 1 compiles of 40 zygotes, 27 of which were microinjected by Hagai, 13 of which were injected by me.
-See [\textcolor{purple}{my plate}](images/batch1TL_M743T_MI_Tom_nov_13_2019.jpg), or [\textcolor{purple}{Hagai's plate}](images/batch1TL_M743T_MI_hagai_nov_13_2019.jpg)
+See [my plate](images/batch1TL_M743T_MI_Tom_nov_13_2019.jpg), or [Hagai's plate](images/batch1TL_M743T_MI_hagai_nov_13_2019.jpg)
 
 Due to distance between our lab and lab 3 where the microinjections took place, along with unawareness of lack of devices such as 10 µL pipettes, we performed the injections on 8-16 cell stage zygotes (Hagai and I).
 
@@ -28,17 +149,15 @@ In my case some of the microinjections did not enter the cell, most were inside 
 
 
 
-\pagebreak{}{}
 
 ## Microinjection expertise examination Tom V Hagai
 
-\definecolor{brownyellow}{cmyk}{0, 0.72, 0.88, 0.69}
 *Date: December 10^th^, 2019*
-After conducting Microinjections on November 13^th^, I have data about \textcolor{brownyellow}{larvae's survivability after injection}. Part of the experiment's objectives was to examine my skills vs Hagai's skills. 
+After conducting Microinjections on November 13^th^, I have data about larvae's survivability after injection. Part of the experiment's objectives was to examine my skills vs Hagai's skills. 
 
-[\textcolor{purple}{Raw data - my table}](tables/Tom_VS_Hagai_R1_Tom.csv)
+[Raw data - my table](tables/Tom_VS_Hagai_R1_Tom.csv)
 
-[\textcolor{purple}{Raw data - Hagai's table}](tables/Tom_VS_Hagai_R1_Hagai.csv)
+[Raw data - Hagai's table](tables/Tom_VS_Hagai_R1_Hagai.csv)
 
 ### Table 7:
 
