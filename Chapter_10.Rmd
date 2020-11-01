@@ -18,3 +18,5 @@ Got [this](https://scholar.google.co.il/scholar?q=mannac+zebrafish+fluorescence&
 Read [nu7441]() related article for Tommorow's injections. 
 
 
+## 27Jun2020 Learned total RNA extraction from Hagai 
+ToDo: copy protocol
