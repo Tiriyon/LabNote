@@ -837,3 +837,290 @@ DNA used is tube 003 199.497 ng/µl of FBgfp colony no. 1
 
 [See local](images/13sep2020.png)
 
+```{r, echo = FALSE}
+options(knitr.table.format = "html")
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+## 23Oct2020 Planing for October Sunday 25^th^ 2020
+
+On Thursday, Hagai and I located zfGNE plasmid from Alon's laboratory work. I placed a fraction of the plasmid inside T7 Splicing box in our -20°C fridge. 
+
+### Sequential Digestion with Two Incompatible Enzymes
+
+**Steps:**
+
+There is no buffer in which both HindIII-HF and BglII exhibit >50% activity and no star activity. A sequential digest will be necessary. 
+
+1. Set up reaction for first restriction enzyme* as follows: 
+
+```{r, table1.calc, echo = FALSE}
+# Lib knitr and kableextra
+
+library(kableExtra)
+library(knitr)
+
+# Known
+gfp.c <- 200
+mCh.c <- 460
+HindIII.v <- 8
+CutSmart.v <- 8
+
+# Conc Calc
+rxn.volume <- HindIII.v + CutSmart.v
+gfp.v <- 8000/gfp.c # 8 µg for rxn
+mCh.c <- 460 # µg
+mCh.v <- round(8000/mCh.c) # 8 µg
+# gfp table
+rxn.volume <- rxn.volume + gfp.v
+DDW.volume <- (80 - rxn.volume)
+Component <- c("FBgfp", "10X CutSmartBuffer", "HindIII-HF", "DDW")
+Volume <- c(gfp.v, CutSmart.v, HindIII.v, DDW.volume)
+v.units <- c("µl", "µl", "µl", "µl")
+Concentration <- c("8 µg", "1X", "160 units", " - ")
+gfp.table <- data.frame(Component, Volume, v.units, Concentration)
+# mCh
+rxn.volume <- HindIII.v + CutSmart.v
+rxn.volume <- rxn.volume + mCh.v
+DDW.volume <- (80 - rxn.volume)
+Component <- c("FBmCh", "10X CutSmartBuffer", "HindIII-HF", "DDW")
+Volume <- c(mCh.v, CutSmart.v, HindIII.v, DDW.volume)
+v.units <- c("µl", "µl", "µl", "µl")
+Concentration <- c("8 µg", "1X", "160 units", " - ")
+mCh.table <- data.frame(Component, Volume, v.units, Concentration)
+
+# Knit tables
+kable(gfp.table, booktabs = TRUE, caption = "FBgfp HindIII-HF digestion") %>%
+        kable_styling(font_size = 12) %>%
+        row_spec(1, bold = TRUE, color = 'white', 
+                 background = '#1c9403') 
+
+kable(mCh.table, booktabs = TRUE, caption = "FBmCh HindIII-HF digestion") %>%
+        kable_styling(font_size = 12) %>%
+        row_spec(1, bold = TRUE, color = 'white', 
+                 background = '#ec3c13') 
+         
+```
+
+2. Incubate at 37°C for 15 minutes.
+3. Heat inactivate by incubating at 80°C for 20 minutes.
+4. Add sufficient NaCl to bring the salt concentration to that of NEBuffer3.1 - 100mM. **Dilute NaCl Stock as follows:**
+
+**Notes:** The RXNs worked well, 
+
+```{r, echo = FALSE}
+stock.c <- 5000 # mM of NaCl
+reduceStock <- 4500 # mM
+TakeFromStock <- reduceStock*10/(stock.c - reduceStock)
+cat("Take ", TakeFromStock, " µl of 5M NaCl and dilute in 10 µl DDW")
+```
+
+**Add into current reaction after heat inactivation diluted NaCl as follows:**
+
+```{r, echo = FALSE}
+addtoRXN <- (88*100)/(reduceStock-100) # 88 final rxn vol, 100 mM final conc
+cat("Add ", addtoRXN, " µl diluted NaCl")
+```
+
+5. Add 8 µl (80 units) of BglII.
+6. Incubate at 37°C for 5-15 minutes.
+7. Move to ice.
+
+[Source](https://nebcloner.neb.com/#!/protocol/re/sequential-heat/HindIII-HF,BglII).
+
+### T7 Oligo Annealing:
+
+Add 5 µl MyBuffer and 1µl of each oligo + 43 µl DDW
+Heat up a block to 95°C, place the sample and turn the block off. Let it cool slowly.
+
+### Clean Plasmid before ligation
+
+
+### Plasmid T7 ligation:
+
+Set up the following reaction i a microcentrifuge tube on **ice**.  
+(T4 DNA Ligase should be added last. Note that the table shows a ligation using a molar ratio of 1:3 vector to insert for the indicated DNA sizes.) Use NECioCalculator to calculate molar ratios.
+
+| Component                | 20µl reaction |
+|--------------------------+---------------|
+| T4 DNA ligase buffer 10X | 2 µl          |
+| Vector DNA (5.496 kb)    | calculate     |
+| Isert DNA                | calculate     |
+| DDW                      | 1 µl          |
+
+2. Mix the reaction by pipetting up and down and spin down briefly.
+3. Incubate at 16°C overnight or RT for 10 minutes.
+4. Heat inactivate at 65°C for 10 minutes.
+6. Chill on ice and transform 1-5 µl of the reaction into 50 µl competent cells.
+
+### T7 ligation - redo 26^th^ October - Monday
+
+```{r, echo = TRUE}
+# Insert ng calculation:
+insert.stock <- 10 #µM
+insert.stock.molar <- insert.stock*10^-6 # convert micro-molar to molar
+insert.stock.mol.to.microliter <- insert.stock.molar*10^-6 # Molar is mole/L hence multiply by 1 million to get to molar/microliter
+insert.mW <- 14863.6 # g/mol insert Mw addition of F and R primers' MW
+insert.ng.to.microliter <- insert.stock.mol.to.microliter*insert.mW*10^9 
+
+# insert:vector 3:1
+insert.bp <- 24
+vector.bp <- 5529
+vector.ng <- 50 # As protocol specify
+ratio <- 3
+
+Insert.ng.3 <- insert.bp/vector.bp*vector.ng*ratio # insert.ng - the required mass of insert in said ratio RXN
+print(Insert.ng.3)
+
+
+# insert:vector 7:1
+insert.bp <- 24
+vector.bp <- 5529
+vector.ng <- 50 # As protocol specify
+ratio <- 7
+
+Insert.ng.7 <- insert.bp/vector.bp*vector.ng*ratio # insert.ng - the required mass of insert in said ratio RXN
+print(Insert.ng.7)
+
+# insert:vector 10:1
+insert.bp <- 24
+vector.bp <- 5529
+vector.ng <- 50 # As protocol specify
+ratio <- 10
+
+Insert.ng.10 <- insert.bp/vector.bp*vector.ng*ratio # insert.ng - the required mass of insert in said ratio RXN
+print(Insert.ng.10)
+
+
+
+```
+
+## 26Oct2020 FB PCR
+
+Primer order no. 3296807
+
+FBgfp333_1130 FWD:
+
+GGC GTG GAT AGC GGT TTG A
+
+Tm: 57.9°C
+CG: 57.9%
+Molecular Weight 5939.9
+nmoles/OD260: 5.3
+µg/OD260: 31.6
+
+For 100 µM add 273 µl
+
+FBgfp333_1130 REV
+
+TTT CTG TTG GTA CCA GGT GAG G
+
+Tm: 56.7°C
+GC: 50.0%
+Molecular Weight 6812.4
+
+For 100 µM add 182 µl
+
+FBmCh333_1118 FWD
+
+GGC GTG GAT AGC GGT TTG A
+
+Tm: 57.9°C
+GC: 57.9%
+Molecular Weight: 5939.9
+
+For 100µM add 307 µl
+
+
+FBmCh333_1118 REV
+
+CCA GGT GAG GTA GTT CTT CTG ATT AC
+
+Tm: 56.6°C
+CG: 46.2%
+Molecular Weight: 7992.2
+
+For 100 µM add 328 µl
+
+
+### PCR reaction calibration
+
+Final RXN vol: 20 µl
+
+```{r, echo= FALSE}
+library(kableExtra)
+library(knitr)
+
+# GFP
+# Parameters
+no.rxn <- 10
+GoTaqX2 <- 10*no.rxn # µl
+GFP333FWD <- 1.6*no.rxn # µl (10 µM stock)
+GFP333REV<- 1.6*no.rxn # µl (10 µM stock)
+FBgfp.plasmid <- 1
+DDW <- 20*no.rxn - GoTaqX2 + GFP333FWD + GFP333REV + FBgfp.plasmid
+
+# Mix table
+Component <- c("DDW", "GoTaq X2", "GFP333FWD", "GFP333REV", "FBgfp Plasmid")
+Volume <- c(DDW, GoTaqX2, GFP333FWD, GFP333REV, FBgfp.plasmid)
+
+FBgfpPCR.mix <- data.frame(Component, Volume)
+kable(FBgfpPCR.mix, booktabs = TRUE, caption = "FBgfp PCR mix - optimization") %>%
+        kable_styling(font_size = 12) %>%
+        row_spec(1, bold = TRUE, color = 'white', 
+                 background = '#1c9403') 
+print(" Run gradient from 56°C by 0.4°C increase")
+
+# mCh
+# Parameters
+no.rxn <- 10
+GoTaqX2 <- 10*no.rxn # µl
+mCh333FWD <- 1.6*no.rxn # µl (10 µM stock)
+mCh333REV<- 1.6*no.rxn # µl (10 µM stock)
+FBmCh.plasmid <- 1
+DDW <- 20*no.rxn - GoTaqX2 + mCh333FWD + mCh333REV + FBmCh.plasmid
+
+# Mix table
+Component <- c("DDW", "GoTaq X2", "mCh333FWD", "mCh333REV", "FBmCh Plasmid")
+Volume <- c(DDW, GoTaqX2, mCh333FWD, mCh333REV, FBmCh.plasmid)
+
+FBmChPCR.mix <- data.frame(Component, Volume)
+kable(FBmChPCR.mix, booktabs = TRUE, caption = "FBmCh PCR mix - optimization") %>%
+        kable_styling(font_size = 12) %>%
+        row_spec(1, bold = TRUE, color = 'white', 
+                 background = '#1c9403') 
+print(" Run gradient from 56°C by 0.4°C increase")
+```
+
+**T7 oligos:**
+
+GATC TAATACGACTCACTATAG GG
+
+     ATTATGCTGAGTGATATC CC TCGA
+
+**Rev primer as ordered 5' -> 3':**
+AGCTCCCTATAGTGAGTCGTATTA
+
+```{r, echo= FALSE}
+library(kableExtra)
+library(knitr)
+
+# GFP
+# Parameters
+no.rxn <- 10
+GoTaqX2 <- 10*no.rxn # µl
+GFP333FWD <- 1.6*no.rxn # µl (10 µM stock)
+GFP333REV<- 1.6*no.rxn # µl (10 µM stock)
+FBmCh.colonie <- 3
+DDW <- 20*no.rxn - GoTaqX2 + GFP333FWD + GFP333REV + FBgfp.plasmid
+
+# Mix table
+Component <- c("DDW", "GoTaq X2", "GFP333FWD", "GFP333REV", "FBmCh Colonie LB")
+Volume <- c(DDW, GoTaqX2, GFP333FWD, GFP333REV, FBmCh.colonie)
+
+FBgfpPCR.mix <- data.frame(Component, Volume)
+kable(FBgfpPCR.mix, booktabs = TRUE, caption = "FBmCh.colonie PCR mix") %>%
+        kable_styling(font_size = 12) %>%
+        row_spec(1, bold = TRUE, color = 'white', 
+                 background = '#1c9403') 
+```
