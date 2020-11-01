@@ -1,10 +1,6 @@
-----------
-10June2020
-----------
+## 10June2020 Fin clips, 19-20 May 2020 - Lab procedure and results
 
-# 10June2020 Fin clips, 19-20 May 2020 - Lab procedure and results
-
-## PCR preparation:
+### PCR preparation:
 
 * Made a working stock for `ex12_345R` reverse primer for exon 12 amplification.
 * 10 $\mu M$ from $10 \mu l$ of $100 \mu M$ stock and $90 \mu l$ DDW.
@@ -25,28 +21,28 @@ Z: Z1-Z3, Z6-Z8, 7=NTC, 8=-
 
 ## PCR programs:
 
-Users>HL>28WTSF
-System>Tom>Ex12345
+`Users>HL>28WTSF`
+`System>Tom>Ex12345`
 
 ## Results:
 
 **Strips A,B,C**
-
+<!-- fix img pos
 ```{r, Gel1, out.width = "300 pt"}
 knitr::include_graphics("../../365/10June2020/Master 2020-06-10_15h42m20s.png")
 ```
-
+-->
 **Strips D,Z**
-
+<!-- fix img pos
 ```{r, Gel2, out.width = "300 pt"}
 knitr::include_graphics("../../365/10June2020/Master 2020-06-10_15h45m46s.png")
 ```
-
+-->
 Both gels: 1.5%, 120V @ 28min. 
 
 ## Stored:
 
-* PCR amplicons inside Molecular lab (big) at $-20 \degree$ fridge.
+* PCR amplicons inside Molecular lab (big) at $-20° fridge.
 * DNA extracts in our lab's fridge.
 
 ## Follow up:
@@ -58,8 +54,6 @@ Both gels: 1.5%, 120V @ 28min.
 * Move Fish accordingly.
 * Repair latex code for tables 9June2020....
 (Image for DNA extract box at daily folder)
-<!-- Workflow, dynamic, notes, plans, schedules out of lab work (e.g. organizing this notebook) -->
 
 
-\pagebreak{}{}
 
