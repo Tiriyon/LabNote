@@ -1,0 +1,104 @@
+# Title
+
+
+offer 1:
+GNE mutation dependant protein localization relationship
+
+offer 2
+GNE Myopathy Mutational relationship of phenotype and protein localization
+
+
+
+# Abstract
+
+
+
+# Introduction
+
+A paragrapb presenting GNE myopathy,the enzyme and its function,sialic acud and its importance in human biology.
+
+A paragraph describing the current knowledge on the disease,mutations,sequence and promoter.
+
+A paragraph describing current studies on the disease,mice experiments, unpublished work by hagai, clinical trials and more.
+
+
+A paragraph on the protein,location and research.
+
+A paragraph on my goals
+ki model
+profein visualization
+
+A paragraph on crispr
+
+A paragraph on frankenbodies, maybe preceade with visualization glal.
+
+A closing paragraph outlying the research' aims.
+
+to add
+zebrafish as tool
+hdr nhej
+
+
+# Roadmap
+
+2 branches:
+
+branch 1
+Mapping human M743T mutation tk zerafish
+crispr design
+hdr and nhej compounds
+sgrna ivt
+in vivo cut estimation
+microinjections
+genotyping
+
+branch 2 protein visualization
+Chosing a probe & tag
+cloning FB
+T7 FB recombination
+dnm1 & fb feasibilty assay
+gne & fb mi
+gne mutations recombination
+fb gne + mutations mi
+optic localization
+
+
+# Methods
+
+1. animals
+
+2. crispr design
+
+3. sgRNA IVT
+
+4. in vivo cut feasibility
+
+5. hdr enhancing molecules
+
+6. microinjections - CRISPR
+
+7. FB T7 recombination linearization and IVT
+
+8. DMN1 linearization and IVT
+
+9. DNM1 + FB mi feasibility analysis
+
+10. gne recombination to IVT
+
+11. FB + gne wt + zGNE wt + hGNE mutants MI
+
+12. optic visualization
+
+
+
+
+# Preliminary Results
+
+1. crispr in vivo cut
+2. crispr in vivo ki - no live specimen
+3. T7 recombinant FB 
+
+# Risk analysis
+
+
+# Disscussion 
