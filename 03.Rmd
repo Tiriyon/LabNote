@@ -1124,3 +1124,7 @@ kable(FBgfpPCR.mix, booktabs = TRUE, caption = "FBmCh.colonie PCR mix") %>%
         row_spec(1, bold = TRUE, color = 'white', 
                  background = '#1c9403') 
 ```
+
+## 03Nov2020
+
+[](#03nov2020)

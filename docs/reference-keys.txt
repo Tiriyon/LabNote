@@ -1,5 +1,6 @@
 tab:unnamed-chunk-19
 tab:unnamed-chunk-20
+status
 introduction
 links
 m743t-ki-modeling
@@ -109,6 +110,7 @@ plasmid-t7-ligation
 t7-ligation---redo-26th-october---monday
 oct2020-fb-pcr
 pcr-reaction-calibration
+nov2020
 journal
 june2020-gne-protein-visualization-in-vivo-thoughts
 jun2020-learned-total-rna-extraction-from-hagai
@@ -124,3 +126,11 @@ pcr-mixes-1
 july2020-zfish-talk
 july2020-zfish-talk-1
 july2020-zfish-talk-2
+title
+abstract
+introduction-1
+roadmap
+methods
+preliminary-results
+risk-analysis
+disscussion
