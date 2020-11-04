@@ -12,7 +12,7 @@ description: "This is a laboratory notebook for documentation of experimental pr
 
 # Status:
 
-03Nov2020 - T7 recombination in FBmCh failed, [See Results here](http://tiriyon.github.io/LabNote/frankenbodies.html#03nov2020)
+03Nov2020 - T7 recombination in FBmCh failed, [See Results here](http://tiriyon.github.io/LabNote/frankenbodies.html#nov2020)
 
 ## Introduction
 
