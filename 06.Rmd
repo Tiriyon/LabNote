@@ -1,0 +1,9 @@
+# 08Nov2020 Frankenbody and DNM1 plasmid microinjection
+
+To examine FB expression,duration and fluorescence with HA binding and without HA binding, I will employ plasmid microinjection of FB plasmids alongside DNM1 plasmids to zebrafish fertilized eggs. 
+
+The main driver behind this decisiois to examine any level of efficiency and viability of the experiment. Sine mRNA degrade faster than plasmid, plasmid MI will reveal duration and expression patterns. 
+
+Downside to that, is loss of full larvae coverege and expected mozaic expression pattern in different cells.
+
+## 
